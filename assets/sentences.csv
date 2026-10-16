@@ -1,0 +1,80 @@
+# TIER|sentence   -  words in [brackets] can become blanks (each needs a meaning in vocab.csv)
+# Tier t needs at least: t1=2, t2=3, t3=4, t4=5, t5=6 bracketed words.
+1|The [children] ran across the [garden] to chase a [butterfly] before the [storm] arrived.
+1|Every [morning], my [grandmother] bakes fresh [bread] and shares it with the [neighbors].
+1|A small [rabbit] hid under the [bridge] while the [river] flowed gently past.
+1|We packed a [basket] with [apples] and [cheese] for a picnic by the [lake].
+1|The [teacher] asked the [students] to open their [books] and read the first [chapter].
+1|At [night], the [moon] lit the quiet [village] and the [shepherd] smiled.
+2|After a long [journey], the [travelers] reached a [peaceful] valley and built their [shelter].
+2|The [chef] used fresh [ingredients] to prepare a [delicious] meal for the [guests].
+2|A [curious] child found an old [lantern] hidden inside the [attic] of the house.
+2|The [captain] steered the ship through [dangerous] waters toward a distant [island].
+2|Our teacher gave a clear [explanation] of how the [volcano] formed over [centuries].
+2|The [farmer] watched the [harvest] grow under the warm [sunshine] and thanked the [seasons].
+3|The [explorer] kept a detailed [journal] to record every [discovery] during the [expedition] across the [desert].
+3|Despite the [challenge], the [athletes] showed great [determination] and trained with [discipline] each [season].
+3|A [scientist] performed an [experiment] to test her [hypothesis] and recorded the [results] carefully.
+3|The [architect] designed a [spacious] library with [enormous] windows that welcomed natural [sunlight].
+3|Local [merchants] gather at the [market] to [exchange] goods and share [stories] about distant [kingdoms].
+3|The [detective] followed a [mysterious] clue and finally uncovered the [culprit] behind the [robbery].
+4|Although the [orchestra] rehearsed [tirelessly], the [conductor] demanded [precision] and refused to [tolerate] any [mistakes].
+4|The [government] announced a [sustainable] plan to [conserve] water and protect the [environment] for future [generations].
+4|A [skilled] [surgeon] stayed [composed] during the [complicated] operation and saved the [patient].
+4|The [ambassador] gave a [diplomatic] reply to avoid a serious [conflict] between the two [nations] and restore [harmony].
+4|Her [ambition] and [perseverance] helped her [overcome] every [obstacle] on the road to [success].
+4|The [researchers] carefully [excavated] the ancient [temple] and [preserved] each fragile [artifact].
+5|Despite [skepticism] from critics, the [philosopher] presented a [meticulous] argument that [challenged] every [conventional] belief about [morality].
+5|The [entrepreneur] showed [resilience] when the [startup] faced a [catastrophic] loss, and her [innovative] strategy led to a [remarkable] recovery.
+5|Although [algorithms] offer [efficient] solutions, [complexity] remains [unavoidable] unless [optimization] reduces [redundancy].
+5|The [archipelago] remained [uninhabited] until [explorers] discovered its [abundant] [resources] and [fertile] soil.
+5|A [persistent] [investigator] [scrutinized] the [anomaly] and offered a [plausible] explanation that [reconciled] the conflicting [evidence].
+5|The [philanthropist] made a [generous] donation, [alleviating] the [hardship] of families struggling with [poverty] and [adversity].
+1|The [squirrel] gathered [acorns] beneath the [branches] of the ancient [forest] before [winter] arrived.
+1|A [painter] mixed bright [colors] on a wooden [palette] to capture the [sunset] over the [harbor].
+1|The [postman] delivered a sealed [envelope] and a heavy [parcel] to the [cottage] on the [hillside].
+1|Young [sailors] hoisted the [canvas] sails as a gentle [breeze] guided the [vessel] across the [bay].
+1|A [blacksmith] heated the iron [horseshoe] in the glowing [furnace] and shaped it on the [anvil].
+1|The [librarian] arranged the dusty [volumes] on the wooden [shelves] inside the quiet [reading] room.
+1|Wild [horses] galloped across the [meadow] while distant [thunder] echoed through the [canyon].
+1|The [baker] kneaded the soft [dough] and sprinkled [cinnamon] over the warm [pastries].
+1|A [fisherman] mended his [tangled] nets beside the wooden [pier] as [seagulls] circled overhead.
+2|The [astronaut] observed the [luminous] stars through the [telescope] aboard the [orbital] station.
+2|A [botanist] collected rare [specimens] of [tropical] orchids hidden beneath the dense [canopy].
+2|The [watchmaker] adjusted the tiny [gears] and [springs] to restore the [antique] timepiece.
+2|Heavy [rainfall] caused the [reservoir] to overflow, flooding the [adjacent] farmland and [orchards].
+2|The [composer] wrote a haunting [melody] for the [violin] that captivated the entire [audience].
+2|Skilled [artisans] carved [intricate] patterns into the [marble] pillars of the royal [courtyard].
+2|The [mountaineer] navigated the [treacherous] ridge using a [compass] and sturdy [climbing] ropes.
+2|A [journalist] interviewed several [witnesses] to verify the [details] of the unexpected [incident].
+2|The [naturalist] documented the [seasonal] [migration] of monarch butterflies across the [continent].
+3|The [archaeologist] deciphered the [inscriptions] carved into the [limestone] tablet from a [forgotten] [dynasty].
+3|Rapid [urbanization] transformed the rural [province] into a [bustling] metropolis with modern [infrastructure].
+3|The [biologist] observed how [predators] adapt their [camouflage] to survive in [hostile] [ecosystems].
+3|During the [negotiation], the [mediator] proposed a [compromise] that satisfied both [factions] and prevented a [dispute].
+3|A [meteorologist] analyzed [atmospheric] pressure to [forecast] the path of the approaching [cyclone].
+3|The [historian] examined [medieval] [manuscripts] to reconstruct the [chronicle] of the besieged [fortress].
+3|Strict [regulations] were enacted to curb [industrial] [emissions] and preserve the fragile [watershed].
+3|The [astronomer] detected a faint [celestial] signal originating from a [distant] [nebula] beyond our [galaxy].
+3|An [experienced] [navigator] charted a safe [corridor] through the [turbulent] strait despite poor [visibility].
+4|The [neuroscientist] investigated how [synaptic] pathways [consolidate] memories during [prolonged] periods of [slumber].
+4|Faced with [mounting] inflation, the [treasury] implemented [stringent] fiscal [measures] to stabilize the [currency].
+4|The [playwright] crafted a [satirical] drama that [exposed] the [hypocrisy] and [vanity] of the ruling [aristocracy].
+4|Geologists [postulated] that [tectonic] collisions [generated] the [formidable] mountain range over [millennia].
+4|The [cryptographer] devised an [ingenious] cipher that [withstood] every [systematic] attempt at [decryption].
+4|Despite [formidable] opposition, the [reformers] [advocated] for [equitable] laws and [abolished] the archaic [statute].
+4|The [epidemiologist] traced the [contagion] to a [contaminated] water source and [mandated] an immediate [quarantine].
+4|An [astute] [curator] authenticated the [provenance] of the Renaissance [portrait] through [radiocarbon] analysis.
+4|The [symphony] reached a [crescendo] that [reverberated] throughout the [auditorium] and left the [spectators] [spellbound].
+5|The [epistemologist] contended that [empirical] observation alone cannot [substantiate] [metaphysical] claims without [rigorous] [deductive] reasoning.
+5|Unchecked [anthropogenic] activity has [precipitated] an [irreversible] decline in [biodiversity], [imperiling] fragile [trophic] networks worldwide.
+5|The [jurisprudence] committee scrutinized the [ambiguous] statute to [preclude] [arbitrary] enforcement and safeguard [constitutional] [sovereignty].
+5|Through [spectroscopic] analysis, [astrophysicists] discerned the [primordial] composition of [interstellar] dust [coalescing] within the [protoplanetary] disk.
+5|The [iconoclastic] theorist [repudiated] [orthodox] paradigms, proposing a [parsimonious] framework that [synthesized] disparate [phenomena].
+5|Chronic [malfeasance] and [fiscal] [profligacy] eroded institutional [legitimacy], [exacerbating] socioeconomic [stratification] across the [polity].
+5|To [mitigate] systemic [fragility], the [consortium] instituted [decentralized] protocols capable of [withstanding] [cataclysmic] cybernetic [incursions].
+5|The [paleontologist] unearthed [stratigraphic] evidence of a [cataclysmic] extinction that [decimated] pelagic [organisms] across ancient [biospheres].
+5|Her [pellucid] treatise [elucidated] the [intricacies] of quantum [entanglement], [dispelling] long-standing [misconceptions] among [contemporaries].
+5|The [plenipotentiary] navigated the [labyrinthine] geopolitical [impasse] with [consummate] [equanimity], averting [belligerent] escalation.
+5|By [juxtaposing] [antithetical] narratives, the [historiographer] illuminated the [ephemeral] nature of [hegemonic] [ideologies].
+5|Pharmacological [efficacy] was [attenuated] by [idiosyncratic] metabolic pathways, necessitating [bespoke] therapeutic [regimens] for [refractory] patients.

@@ -1,0 +1,202 @@
+package wordsurvive;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
+
+final class TitleScreen extends Screen {
+    TitleScreen(Main app) {
+        super(app);
+        PixelButton start = new PixelButton("Start");
+        start.addActionListener(e -> app.show("choice"));
+        place(start, 533, 548, 372, 125);
+    }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 175, 0.757); }
+}
+
+final class AuthChoiceScreen extends Screen {
+    AuthChoiceScreen(Main app) {
+        super(app);
+        PixelButton login = new PixelButton(Assets.get("LOGIN_BUTTON.png"));
+        PixelButton signup = new PixelButton(Assets.get("SIGNUP_BTN.png"));
+        login.addActionListener(e -> app.show("login"));
+        signup.addActionListener(e -> app.show("signup"));
+        place(login, 215, 553, 370, 123);
+        place(signup, 845, 553, 370, 123);
+        addBack("title", 40, 30);
+    }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 140, 0.757); }
+}
+
+final class AuthScreen extends Screen {
+    private final boolean signup;
+    private final JTextField user = PixelField.text();
+    private final JPasswordField pass = PixelField.password();
+    private final JLabel msg = new JLabel("", SwingConstants.CENTER);
+
+    AuthScreen(Main app, boolean signup) {
+        super(app);
+        this.signup = signup;
+        JLabel l1 = new JLabel("Email/Username", SwingConstants.RIGHT), l2 = new JLabel("Password", SwingConstants.RIGHT);
+        for (JLabel l : new JLabel[]{l1, l2}) { l.setFont(UI.font(34)); l.setForeground(Color.BLACK); }
+        place(l1, 60, 315, 650, 60);
+        place(l2, 60, 500, 650, 60);
+        place(user, 740, 285, 575, 125);
+        place(pass, 740, 470, 575, 125);
+        msg.setFont(UI.font(26)); msg.setForeground(new Color(190, 25, 25));
+        place(msg, 300, 598, 860, 40);
+        PixelButton play = new PixelButton(Assets.get("Play.png"));
+        play.addActionListener(e -> submit());
+        user.addActionListener(e -> pass.requestFocusInWindow());
+        pass.addActionListener(e -> submit());
+        place(play, 515, 640, 370, 130);
+        addBack("choice", 40, 30);
+    }
+
+    private void submit() {
+        String name = user.getText().trim(), pw = new String(pass.getPassword());
+        if (signup) {
+            String err = app.users.register(name, pw);
+            if (err != null) { msg.setText(err); return; }
+            app.user = app.users.login(name, pw);
+            app.theme = 0;
+            app.show("avatar");
+        } else {
+            app.user = app.users.login(name, pw);
+            if (app.user == null) { msg.setText("Wrong username or password."); return; }
+            app.afterLogin();
+        }
+    }
+
+    @Override void onShow() { user.setText(""); pass.setText(""); msg.setText(""); user.requestFocusInWindow(); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, signup ? "SIGNUPLBL.png" : "LOGINLBL.png", 712, 30, 0.757); }
+}
+
+final class AvatarScreen extends Screen {
+    private static final int[][] TILES = {{425, 222}, {650, 230}, {875, 222}, {518, 468}, {782, 468}};
+    private int sel = 0;
+
+    AvatarScreen(Main app) {
+        super(app);
+        PixelButton pick = new PixelButton("Pick");
+        pick.addActionListener(e -> {
+            app.user.avatar = sel;
+            app.users.save();
+            app.afterLogin();
+        });
+        place(pick, 620, 700, 230, 82);
+        addMouseListener(new MouseAdapter() {
+            @Override public void mousePressed(MouseEvent e) {
+                for (int i = 0; i < TILES.length; i++) {
+                    Rectangle r = new Rectangle(UI.s(TILES[i][0]), UI.s(TILES[i][1]), UI.s(168), UI.s(218));
+                    if (r.contains(e.getPoint())) { sel = i; Sound.sfx("select"); repaint(); return; }
+                }
+            }
+        });
+    }
+
+    @Override void onShow() { sel = 0; }
+
+    @Override protected void paintExtra(Graphics2D g) {
+        UI.draw(g, Assets.blankButton(), 510, 40, 450, 155);
+        g.setFont(UI.font(46));
+        g.setColor(Color.BLACK);
+        UI.centered(g, "Select Your", new Rectangle(UI.s(510), UI.s(62), UI.s(450), UI.s(50)), Color.BLACK);
+        UI.centered(g, "Avatar", new Rectangle(UI.s(510), UI.s(108), UI.s(450), UI.s(50)), Color.BLACK);
+        for (int i = 0; i < TILES.length; i++) {
+            double x = TILES[i][0], y = TILES[i][1];
+            g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, i == sel ? 0.95f : 0.6f));
+            UI.draw(g, Assets.trimmed("tileforselectingavatar.png"), x, y, 168, 218);
+            g.setComposite(AlphaComposite.SrcOver);
+            if (i == sel) { g.setColor(new Color(90, 225, 240, 150)); g.fillRect(UI.s(x + 12), UI.s(y + 14), UI.s(144), UI.s(190)); }
+            Avatars.drawIn(g, i, x + 14, y + 40, 140, 140);
+        }
+    }
+}
+
+final class MenuScreen extends Screen {
+    MenuScreen(Main app) {
+        super(app);
+        header = true;
+        nameColor = Color.BLACK;
+        String[] labels = {"Play", "Profile", "Options"};
+        Runnable[] acts = {() -> app.show("mode"), () -> app.show("profile"), () -> app.openSettings(null)};
+        for (int i = 0; i < 3; i++) {
+            PixelButton b = new PixelButton(labels[i]);
+            Runnable a = acts[i];
+            b.addActionListener(e -> a.run());
+            place(b, 515, 288 + i * 157, 370, 125);
+        }
+    }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1252, 0, 0.349); }
+}
+
+final class StackScreen extends Screen {
+    StackScreen(Main app, String back, String[] labels, Runnable[] actions) {
+        super(app);
+        header = true;
+        for (int i = 0; i < labels.length; i++) {
+            PixelButton b = new PixelButton(labels[i]);
+            Runnable a = actions[i];
+            b.addActionListener(e -> a.run());
+            place(b, 515, 288 + i * 157, 370, 125);
+        }
+        addBack(back, 45, 665);
+    }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1252, 0, 0.349); }
+}
+
+final class LeaderboardScreen extends Screen {
+    private static final String[] MODES = {"STAGE", "RUSH60", "RUSH120", "RUSH180"};
+    private static final String[] NAMES = {"Stage", "1 min", "2 min", "3 min"};
+    private final PixelButton[] tabs = new PixelButton[4];
+    private int selected = 0;
+
+    LeaderboardScreen(Main app) {
+        super(app);
+        for (int i = 0; i < 4; i++) {
+            final int idx = i;
+            tabs[i] = new PixelButton(NAMES[i]);
+            tabs[i].addActionListener(e -> { selected = idx; refreshTabs(); repaint(); });
+            place(tabs[i], 262 + i * 235, 40, 220, 90);
+        }
+        addBack("mode", 45, 665);
+    }
+
+    private void refreshTabs() {
+        for (int i = 0; i < 4; i++) tabs[i].setImage(i == selected ? Assets.tinted("green") : Assets.blankButton());
+    }
+
+    @Override void onShow() {
+        if (app.user != null) app.scores.submit("STAGE", app.user.name, app.user.stageScore());
+        refreshTabs();
+    }
+
+    @Override protected void paintExtra(Graphics2D g) {
+        g.setColor(new Color(255, 245, 120));
+        g.fillRect(UI.s(537), UI.s(252), UI.s(386), UI.s(490));
+        UI.draw(g, Assets.trimmed("Leaderboard.png"), 458, 150, 540, 608);
+        g.setFont(UI.fit(g, "LEADERBOARD", UI.font(46), UI.s(380)));
+        UI.centered(g, "LEADERBOARD", new Rectangle(UI.s(458), UI.s(168), UI.s(540), UI.s(100)), new Color(90, 65, 0));
+        List<ScoreBoard.Entry> top = app.scores.top(MODES[selected], 8);
+        g.setFont(UI.font(32));
+        if (top.isEmpty()) {
+            UI.centered(g, "No scores yet", new Rectangle(UI.s(458), UI.s(380), UI.s(540), UI.s(80)), new Color(60, 45, 0));
+            return;
+        }
+        for (int i = 0; i < top.size(); i++) {
+            ScoreBoard.Entry e = top.get(i);
+            double cy = 322 + i * 53;
+            if (app.user != null && e.name.equalsIgnoreCase(app.user.name)) {
+                g.setColor(new Color(255, 160, 0, 90)); g.fillRect(UI.s(545), UI.s(cy - 24), UI.s(370), UI.s(48));
+            }
+            g.setColor(new Color(60, 45, 0));
+            g.setFont(UI.font(26));
+            UI.text(g, (i + 1) + ".", 556, cy, -1, 40);
+            UI.text(g, e.name, 600, cy, -1, 205);
+            UI.text(g, String.valueOf(e.score), 905, cy, 1, 100);
+        }
+    }
+}
