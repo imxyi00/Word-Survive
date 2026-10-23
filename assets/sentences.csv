@@ -1,80 +1,81 @@
 # TIER|sentence   -  words in [brackets] can become blanks (each needs a meaning in vocab.csv)
+# Tier t word lengths: t1=4-5, t2=6, t3=7, t4=8, t5=9-11 letters.
 # Tier t needs at least: t1=2, t2=3, t3=4, t4=5, t5=6 bracketed words.
-1|The [children] ran across the [garden] to chase a [butterfly] before the [storm] arrived.
-1|Every [morning], my [grandmother] bakes fresh [bread] and shares it with the [neighbors].
-1|A small [rabbit] hid under the [bridge] while the [river] flowed gently past.
-1|We packed a [basket] with [apples] and [cheese] for a picnic by the [lake].
-1|The [teacher] asked the [students] to open their [books] and read the first [chapter].
-1|At [night], the [moon] lit the quiet [village] and the [shepherd] smiled.
-2|After a long [journey], the [travelers] reached a [peaceful] valley and built their [shelter].
-2|The [chef] used fresh [ingredients] to prepare a [delicious] meal for the [guests].
-2|A [curious] child found an old [lantern] hidden inside the [attic] of the house.
-2|The [captain] steered the ship through [dangerous] waters toward a distant [island].
-2|Our teacher gave a clear [explanation] of how the [volcano] formed over [centuries].
-2|The [farmer] watched the [harvest] grow under the warm [sunshine] and thanked the [seasons].
-3|The [explorer] kept a detailed [journal] to record every [discovery] during the [expedition] across the [desert].
-3|Despite the [challenge], the [athletes] showed great [determination] and trained with [discipline] each [season].
-3|A [scientist] performed an [experiment] to test her [hypothesis] and recorded the [results] carefully.
-3|The [architect] designed a [spacious] library with [enormous] windows that welcomed natural [sunlight].
-3|Local [merchants] gather at the [market] to [exchange] goods and share [stories] about distant [kingdoms].
-3|The [detective] followed a [mysterious] clue and finally uncovered the [culprit] behind the [robbery].
-4|Although the [orchestra] rehearsed [tirelessly], the [conductor] demanded [precision] and refused to [tolerate] any [mistakes].
-4|The [government] announced a [sustainable] plan to [conserve] water and protect the [environment] for future [generations].
-4|A [skilled] [surgeon] stayed [composed] during the [complicated] operation and saved the [patient].
-4|The [ambassador] gave a [diplomatic] reply to avoid a serious [conflict] between the two [nations] and restore [harmony].
-4|Her [ambition] and [perseverance] helped her [overcome] every [obstacle] on the road to [success].
-4|The [researchers] carefully [excavated] the ancient [temple] and [preserved] each fragile [artifact].
-5|Despite [skepticism] from critics, the [philosopher] presented a [meticulous] argument that [challenged] every [conventional] belief about [morality].
-5|The [entrepreneur] showed [resilience] when the [startup] faced a [catastrophic] loss, and her [innovative] strategy led to a [remarkable] recovery.
-5|Although [algorithms] offer [efficient] solutions, [complexity] remains [unavoidable] unless [optimization] reduces [redundancy].
-5|The [archipelago] remained [uninhabited] until [explorers] discovered its [abundant] [resources] and [fertile] soil.
-5|A [persistent] [investigator] [scrutinized] the [anomaly] and offered a [plausible] explanation that [reconciled] the conflicting [evidence].
-5|The [philanthropist] made a [generous] donation, [alleviating] the [hardship] of families struggling with [poverty] and [adversity].
-1|The [squirrel] gathered [acorns] beneath the [branches] of the ancient [forest] before [winter] arrived.
-1|A [painter] mixed bright [colors] on a wooden [palette] to capture the [sunset] over the [harbor].
-1|The [postman] delivered a sealed [envelope] and a heavy [parcel] to the [cottage] on the [hillside].
-1|Young [sailors] hoisted the [canvas] sails as a gentle [breeze] guided the [vessel] across the [bay].
-1|A [blacksmith] heated the iron [horseshoe] in the glowing [furnace] and shaped it on the [anvil].
-1|The [librarian] arranged the dusty [volumes] on the wooden [shelves] inside the quiet [reading] room.
-1|Wild [horses] galloped across the [meadow] while distant [thunder] echoed through the [canyon].
-1|The [baker] kneaded the soft [dough] and sprinkled [cinnamon] over the warm [pastries].
-1|A [fisherman] mended his [tangled] nets beside the wooden [pier] as [seagulls] circled overhead.
-2|The [astronaut] observed the [luminous] stars through the [telescope] aboard the [orbital] station.
-2|A [botanist] collected rare [specimens] of [tropical] orchids hidden beneath the dense [canopy].
-2|The [watchmaker] adjusted the tiny [gears] and [springs] to restore the [antique] timepiece.
-2|Heavy [rainfall] caused the [reservoir] to overflow, flooding the [adjacent] farmland and [orchards].
-2|The [composer] wrote a haunting [melody] for the [violin] that captivated the entire [audience].
-2|Skilled [artisans] carved [intricate] patterns into the [marble] pillars of the royal [courtyard].
-2|The [mountaineer] navigated the [treacherous] ridge using a [compass] and sturdy [climbing] ropes.
-2|A [journalist] interviewed several [witnesses] to verify the [details] of the unexpected [incident].
-2|The [naturalist] documented the [seasonal] [migration] of monarch butterflies across the [continent].
-3|The [archaeologist] deciphered the [inscriptions] carved into the [limestone] tablet from a [forgotten] [dynasty].
-3|Rapid [urbanization] transformed the rural [province] into a [bustling] metropolis with modern [infrastructure].
-3|The [biologist] observed how [predators] adapt their [camouflage] to survive in [hostile] [ecosystems].
-3|During the [negotiation], the [mediator] proposed a [compromise] that satisfied both [factions] and prevented a [dispute].
-3|A [meteorologist] analyzed [atmospheric] pressure to [forecast] the path of the approaching [cyclone].
-3|The [historian] examined [medieval] [manuscripts] to reconstruct the [chronicle] of the besieged [fortress].
-3|Strict [regulations] were enacted to curb [industrial] [emissions] and preserve the fragile [watershed].
-3|The [astronomer] detected a faint [celestial] signal originating from a [distant] [nebula] beyond our [galaxy].
-3|An [experienced] [navigator] charted a safe [corridor] through the [turbulent] strait despite poor [visibility].
-4|The [neuroscientist] investigated how [synaptic] pathways [consolidate] memories during [prolonged] periods of [slumber].
-4|Faced with [mounting] inflation, the [treasury] implemented [stringent] fiscal [measures] to stabilize the [currency].
-4|The [playwright] crafted a [satirical] drama that [exposed] the [hypocrisy] and [vanity] of the ruling [aristocracy].
-4|Geologists [postulated] that [tectonic] collisions [generated] the [formidable] mountain range over [millennia].
-4|The [cryptographer] devised an [ingenious] cipher that [withstood] every [systematic] attempt at [decryption].
-4|Despite [formidable] opposition, the [reformers] [advocated] for [equitable] laws and [abolished] the archaic [statute].
-4|The [epidemiologist] traced the [contagion] to a [contaminated] water source and [mandated] an immediate [quarantine].
-4|An [astute] [curator] authenticated the [provenance] of the Renaissance [portrait] through [radiocarbon] analysis.
-4|The [symphony] reached a [crescendo] that [reverberated] throughout the [auditorium] and left the [spectators] [spellbound].
-5|The [epistemologist] contended that [empirical] observation alone cannot [substantiate] [metaphysical] claims without [rigorous] [deductive] reasoning.
-5|Unchecked [anthropogenic] activity has [precipitated] an [irreversible] decline in [biodiversity], [imperiling] fragile [trophic] networks worldwide.
-5|The [jurisprudence] committee scrutinized the [ambiguous] statute to [preclude] [arbitrary] enforcement and safeguard [constitutional] [sovereignty].
-5|Through [spectroscopic] analysis, [astrophysicists] discerned the [primordial] composition of [interstellar] dust [coalescing] within the [protoplanetary] disk.
-5|The [iconoclastic] theorist [repudiated] [orthodox] paradigms, proposing a [parsimonious] framework that [synthesized] disparate [phenomena].
-5|Chronic [malfeasance] and [fiscal] [profligacy] eroded institutional [legitimacy], [exacerbating] socioeconomic [stratification] across the [polity].
-5|To [mitigate] systemic [fragility], the [consortium] instituted [decentralized] protocols capable of [withstanding] [cataclysmic] cybernetic [incursions].
-5|The [paleontologist] unearthed [stratigraphic] evidence of a [cataclysmic] extinction that [decimated] pelagic [organisms] across ancient [biospheres].
-5|Her [pellucid] treatise [elucidated] the [intricacies] of quantum [entanglement], [dispelling] long-standing [misconceptions] among [contemporaries].
-5|The [plenipotentiary] navigated the [labyrinthine] geopolitical [impasse] with [consummate] [equanimity], averting [belligerent] escalation.
-5|By [juxtaposing] [antithetical] narratives, the [historiographer] illuminated the [ephemeral] nature of [hegemonic] [ideologies].
-5|Pharmacological [efficacy] was [attenuated] by [idiosyncratic] metabolic pathways, necessitating [bespoke] therapeutic [regimens] for [refractory] patients.
+1|The [girl] and [child] ran across the [yard] and [grass] before the [storm] began.
+1|Every [dawn] and [night], the [baker] makes fresh [bread] and warm [soup] for the [town].
+1|A small [frog] and [mouse] hid under the [rock] and [stone] near the [river].
+1|We packed [pear], [plum], [melon], and [juice] for a [lunch] by the [lake].
+1|The [pupil] sat at the [desk] and opened a [book] to [study] the [story] and [poem].
+1|At [dusk], the bright [moon] lit the [cabin] and the [sheep] on the [hill].
+1|A [duck] and [goose] swam across the [pond] and shook [water] from their [wings].
+1|The [pilot] flew the [plane] high above the [cloud], the [city], and the [ship] near the [coast].
+1|A [hiker] walked the [path] and [trail] through the [park] and rested in the [shade].
+1|The [smith] heated [iron] and [metal] in the [fire] and [flame] beside the [anvil].
+1|A [clerk] placed the [sack] and [boxes] on the [rack] and [shelf] inside the [store].
+1|Wild [deer] and [goats] climbed the [cliff] while [wind] blew across the [farm] and [field].
+1|The [chef] mixed [milk], [flour], and [sugar] in a [bowl] to make sweet [dough].
+1|A [boat] sailed past the [pier] as [gulls] flew over the [wave] and [sand] on the [beach].
+1|She wore a [coat], [scarf], and [boots] when [snow] and [frost] covered the [porch].
+2|A [rabbit] hopped across the [garden] and hid under the wooden [bridge] near the [stream].
+2|We packed a [basket] with [apples], [cheese], and [butter] for the [picnic].
+2|The [farmer] walked through the [meadow] before [sunset] to gather the [cattle].
+2|A [sailor] guided the [vessel] into the [harbor] as a gentle [breeze] blew.
+2|The [artist] used bright [colors] on the [canvas] to paint a rocky [canyon].
+2|Before [winter], the [forest] floor was covered with [acorns] and fallen [leaves].
+2|The [driver] parked the [trucks] beside the [market] and unloaded every [parcel].
+2|Our [guests] sat around the [dinner] [tables] and enjoyed the warm [pastry].
+2|A [doctor] worked at the [clinic] and helped the [person] recover from a [sprain].
+2|The [dancer] moved to the [rhythm] of the [violin] and bowed to the [crowds].
+2|Inside the [castle], a [knight] polished his [shield] and [helmet] by the [hearth].
+2|The [tailor] mended the [jacket] with a [needle], [thread], and a silver [button].
+2|A [monkey] climbed the [jungle] [branch] to reach a ripe [banana] and [orange].
+2|The [author] wrote a [letter] with a [pencil] while sitting beside the [window].
+2|Strong [storms] crossed the [island] and shook the [timber] roof of the [chapel].
+3|Every [morning], the [teacher] greeted each [student] and opened the [history] [chapter].
+3|After a long [journey], the [captain] reached the [village] and found a dry [shelter] before [evening].
+3|The [painter] mixed [crimson] on a wooden [palette] to paint a [picture] of the [country].
+3|A [postman] carried a [package] and a [message] to the [cottage] near the [station].
+3|Distant [thunder] rumbled as heavy [showers] soaked the [orchard] and the [harvest] [baskets].
+3|The [tourist] used a [compass] and a [lantern] while walking through the [ancient] [passage].
+3|In the [kitchen], my [brother] baked [cookies] and [muffins] with [vanilla] for our [friends].
+3|A [plumber] brought a [toolbox] to repair the [leaking] [faucets] inside the [hallway].
+3|The [athlete] trained in all [weather] and won a [victory] at the [stadium] [contest].
+3|Our [library] has [shelves] full of [stories], [science] [volumes], and a quiet [reading] area.
+3|The [soldier] guarded the [kingdom] [borders] with [courage] and [loyalty] during the [winters].
+3|A [spotted] [leopard] crept through the [thicket] before [leaping] onto a [massive] [boulder].
+3|The [builder] measured the [ceiling] and [cabinet] [corners] before cutting the [plywood].
+3|Glowing [candles] lit the [banquet] [chamber] while [singers] performed a [musical] [concert].
+3|The [surgeon] checked the [patient] [records] and gave a [helpful] [summary] of the [results].
+4|The [children] gathered [branches] and [pinecone] piles in the [woodland] before lighting the [campfire].
+4|A [shepherd] watched his [peaceful] flock on the [hillside] under the warm [sunshine] until [twilight].
+4|The [explorer] packed a [backpack], [notebook], and [umbrella] before crossing the [mountain].
+4|Dedicated [students] finished their [homework] and [projects] in the [spacious] [computer] room.
+4|A [squirrel] searched the [backyard] for [chestnut] and [hazelnut] shells near the [fountain].
+4|The [musician] practiced a [graceful] [serenade] on the [keyboard] for the [audience] at the [festival].
+4|We bought [cinnamon] [pastries], a [sandwich], and [lemonade] from the [friendly] [merchant].
+4|Heavy [rainfall] flooded the [pavement] and [sidewalk] while a [traveler] waited at the [terminal].
+4|The [director] praised the [talented] [painting] [designer] and framed the [portrait] in the [corridor].
+4|A [gardener] planted [daffodil] and [lavender] [blossoms] beside the [driveway] and [birdbath].
+4|The [mechanic] repaired the [steering] and [radiator] inside the [workshop] before [midnight].
+4|Flocks of [seagulls] circled the [sailboat] and [lifeboat] near the [southern] [seashore].
+4|She sealed the [birthday] [greeting] in an [envelope] and checked the [calendar] [schedule].
+4|The [villager] discovered a [valuable] [necklace] and [bracelet] hidden inside the [treasure] chest.
+4|The [climbers] reached the [foothill] [overlook] to watch the [majestic] [waterway] and [wildlife].
+5|My [grandmother] baked [delicious] [strawberry] and [blueberry] tarts to share with the [neighbors] at [breakfast].
+5|A [butterfly] and a [dragonfly] rested on a [sunflower] near the [waterfall] in the [countryside] [afternoon].
+5|The [blacksmith] hammered a [horseshoe] on the [workbench] while the [carpenter] built [furniture] [downstairs].
+5|Our [librarian] organized the [paperback] [textbooks] and [magazines] on the [bookshelf] in the [classroom].
+5|The [astronaut] looked through a [telescope] aboard the [spaceship] to track a [satellite] and a [meteorite] [overnight].
+5|A [fisherman] repaired his [rainboots] and [raincoats] by the [houseboat] before the [rainstorm] and [lightning] arrived.
+5|The [passenger] read a [newspaper] and ate [chocolate] [croissant] snacks while waiting at the [concourse] [escalator].
+5|Every [wednesday], the [community] [volunteer] group planted [vegetable] beds and [pineapple] shrubs in the [courtyard].
+5|A [detective] used a [flashlight] and [footprints] to solve the [mysterious] [warehouse] [vandalism] case.
+5|The [orchestra] and [conductor] gave a [wonderful] [classical] performance that delighted the [spectator] [gathering].
+5|Young [travelers] enjoyed an [adventure] through [evergreen] [mountains] with a [guidebook] and [binocular] set.
+5|The [shopkeeper] arranged [glassware], [tableware], and [appliance] displays on a [tablecloth] near the [storefront].
+5|During the [snowstorm], a [snowflake] covered the [windshield] as the [ambulance] drove along the [boulevard] to the [infirmary].
+5|The [architect] drew a [blueprint] for a [penthouse] [apartment] with a [fireplace] and a wide [staircase].
+5|At the [playground], [teammates] practiced [basketball] and [volleyball] while the [announcer] updated the [scorecard].
+5|A [scientist] and [biologist] used a [microscope] to study a [jellyfish], a [crocodile], and a [chameleon].
+5|The [watchmaker] used a [precision] [instrument] to fix the [clockwork] and [hourglass] inside the [showrooms].
+5|Before the [departure], the [attendant] checked every [suitcases] rack, [backpacks] bin, and [parachute] in the [aeroplane].

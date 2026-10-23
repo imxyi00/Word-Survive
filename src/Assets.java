@@ -90,12 +90,13 @@ final class Assets {
         BufferedImage img = cache.get("blank");
         if (img != null) return img;
         BufferedImage src = get("Play.png");
-        img = new BufferedImage(src.getWidth(), src.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g = img.createGraphics(); g.drawImage(src, 0, 0, null); g.dispose();
-        for (int y = 45; y < Math.min(126, img.getHeight()); y++) {
-            int body = img.getRGB(70, y);
-            for (int x = 80; x < Math.min(440, img.getWidth()); x++) img.setRGB(x, y, body);
+        BufferedImage full = new BufferedImage(src.getWidth(), src.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = full.createGraphics(); g.drawImage(src, 0, 0, null); g.dispose();
+        for (int y = 45; y < Math.min(126, full.getHeight()); y++) {
+            int body = full.getRGB(70, y);
+            for (int x = 80; x < Math.min(440, full.getWidth()); x++) full.setRGB(x, y, body);
         }
+        img = full.getWidth() > 24 ? full.getSubimage(12, 0, full.getWidth() - 24, full.getHeight() - 1) : full;
         cache.put("blank", img);
         return img;
     }

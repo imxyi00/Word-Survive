@@ -24,13 +24,21 @@ final class SentenceBank {
             sentences.put(t, new ArrayList<>());
             stageQueues.put(t, new ArrayDeque<>());
         }
-        read("vocab.csv", (p) -> vocab.put(p[1].trim().toLowerCase(), new Info(p[2].trim(), Integer.parseInt(p[0].trim()))));
+        read("vocab.csv", (p) -> {
+            String w = p[1].trim().toLowerCase();
+            vocab.put(w, new Info(p[2].trim(), tierOfWord(w)));
+        });
         read("sentences.csv", (p) -> {
             int t = Integer.parseInt(p[0].trim());
             String s = p[1].trim();
             Matcher m = Pattern.compile("\\[(.+?)\\]").matcher(s);
-            while (m.find()) if (!vocab.containsKey(m.group(1).toLowerCase()))
-                System.err.println("sentences.csv: no meaning in vocab.csv for '" + m.group(1) + "'");
+            while (m.find()) {
+                String w = m.group(1).toLowerCase();
+                if (!vocab.containsKey(w))
+                    System.err.println("sentences.csv: no meaning in vocab.csv for '" + m.group(1) + "'");
+                else if (tierOfWord(w) != t)
+                    System.err.println("sentences.csv: word '" + m.group(1) + "' length " + w.length() + " does not match tier " + t);
+            }
             sentences.computeIfAbsent(t, k -> new ArrayList<>()).add(s);
         });
     }
@@ -56,11 +64,20 @@ final class SentenceBank {
 
     static int tierOf(int level) { return Math.min(MAX_TIER, 1 + (level - 1) / 5); }
 
+    static int tierOfWord(String word) {
+        int len = word.length();
+        if (len <= 5) return 1;
+        if (len == 6) return 2;
+        if (len == 7) return 3;
+        if (len == 8) return 4;
+        return 5;
+    }
+
     static int blanksOf(int level) { return 2 + (level - 1) / 5; }
 
     Puzzle forLevel(int level) {
         int tier = tierOf(level);
-        return build(pickStage(level, tier), tier, blanksOf(level));
+        return build(pickStage(level, tier), tier, blanksOf(level), (level - 1) % 5);
     }
 
     Puzzle forRush(int index) {
@@ -72,7 +89,7 @@ final class SentenceBank {
             Collections.shuffle(all, rnd);
             rushQueue.addAll(all);
         }
-        return build(rushQueue.poll(), tier, Math.min(6, 3 + index / 2));
+        return build(rushQueue.poll(), tier, Math.min(6, 3 + index / 2), 2);
     }
 
     private String pickStage(int level, int tier) {
@@ -94,10 +111,10 @@ final class SentenceBank {
         q.addAll(all);
     }
 
-    private Puzzle build(String sentence, int tier, int wantBlanks) {
+    private Puzzle build(String sentence, int tier, int wantBlanks, int subLevel) {
         Puzzle pz = new Puzzle(tier);
         List<List<String[]>> raw = new ArrayList<>();
-        int markers = 0;
+        List<String> markerWords = new ArrayList<>();
         for (String token : sentence.split(" ")) {
             List<String[]> parts = new ArrayList<>();
             String rest = token;
@@ -105,15 +122,18 @@ final class SentenceBank {
             while ((m = MARK.matcher(rest)).matches()) {
                 if (!m.group(1).isEmpty()) parts.add(new String[]{m.group(1), null});
                 parts.add(new String[]{m.group(2), m.group(2)});
-                markers++;
+                markerWords.add(m.group(2));
                 rest = m.group(3);
             }
             if (!rest.isEmpty()) parts.add(new String[]{rest, null});
             raw.add(parts);
         }
+        int markers = markerWords.size();
         List<Integer> order = new ArrayList<>();
         for (int i = 0; i < markers; i++) order.add(i);
         Collections.shuffle(order, rnd);
+        if (subLevel <= 1) order.sort(Comparator.comparingInt(i -> markerWords.get(i).length()));
+        else if (subLevel >= 3) order.sort((a, b) -> Integer.compare(markerWords.get(b).length(), markerWords.get(a).length()));
         Set<Integer> chosen = new HashSet<>(order.subList(0, Math.min(wantBlanks, markers)));
         int seen = 0;
         for (List<String[]> parts : raw) {

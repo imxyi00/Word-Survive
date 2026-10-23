@@ -1,379 +1,419 @@
 # TIER|word|meaning
-1|children|Young boys and girls
-1|garden|A piece of land where flowers or vegetables grow
-1|butterfly|An insect with large, colorful wings
+1|girl|A young female child
+1|child|A young boy or girl
+1|yard|An area of ground next to a house
+1|grass|Short green plants that cover the ground
 1|storm|Violent weather with strong wind and heavy rain
-1|morning|The early part of the day after sunrise
-1|grandmother|The mother of your mother or father
-1|bread|Baked food made from flour, often sliced
-1|neighbors|People who live next door or nearby
-1|rabbit|A small furry animal with long ears that hops
-1|bridge|A structure built over a river or a road
-1|river|A large stream of water flowing toward the sea
-1|basket|A woven container used for carrying things
-1|apples|Round red or green fruits that grow on trees
-1|cheese|A food made from pressed milk
-1|lake|A large body of still water surrounded by land
-1|teacher|A person whose job is to help students learn
-1|students|People who study at a school
-1|books|Printed pages bound together for reading
-1|chapter|A main section of a book
+1|dawn|The first light of day in the early morning
 1|night|The dark part of the day
-1|moon|The bright object that shines in the sky at night
-1|village|A very small town in the countryside
-1|shepherd|A person who takes care of sheep
-2|journey|A long trip from one place to another
-2|travelers|People who go from place to place
-2|peaceful|Calm and quiet, free from trouble
-2|shelter|A place that protects you from weather or danger
-2|chef|A professional cook
-2|ingredients|The foods that are mixed together to make a dish
-2|delicious|Having a very pleasant taste
-2|guests|People invited to visit or eat at your home
-2|curious|Eager to learn or know something
-2|lantern|A portable lamp with a protective cover
-2|attic|The space under the roof of a house
-2|captain|The person in command of a ship
-2|dangerous|Likely to cause harm
-2|island|Land that is completely surrounded by water
-2|explanation|Words that make something clear and easy to understand
-2|volcano|A mountain that can erupt with hot lava
-2|centuries|Periods of one hundred years
-2|farmer|A person who grows crops or raises animals
-2|harvest|The gathering of ripe crops
-2|sunshine|The light and warmth that come from the sun
-2|seasons|The four parts of the year: spring, summer, autumn and winter
-3|explorer|A person who travels to unknown places to discover them
-3|journal|A written daily record of events and thoughts
-3|discovery|Something found or learned for the first time
-3|expedition|An organized journey made for a special purpose
-3|desert|A very dry land that gets little rain
-3|challenge|Something difficult that tests your ability
-3|athletes|People trained for sports and physical contests
-3|determination|A firm purpose to keep going despite difficulty
-3|discipline|Self-control and training that helps you follow rules
-3|season|One of the four parts of the year
-3|scientist|A person who studies nature through experiments
-3|experiment|A test done to discover or prove something
-3|hypothesis|A proposed explanation that can be tested
-3|results|The outcomes or findings at the end of a test
-3|architect|A person who designs buildings
-3|spacious|Having plenty of room
-3|enormous|Extremely large
-3|sunlight|The light that comes from the sun
-3|merchants|People who buy and sell goods
-3|market|A place where goods are bought and sold
-3|exchange|To give one thing and receive another
-3|stories|Tales told about real or imaginary events
-3|kingdoms|Lands ruled by a king or queen
-3|detective|A person who investigates crimes
-3|mysterious|Strange and difficult to explain
-3|culprit|The person responsible for a crime or fault
-3|robbery|The crime of stealing from a place or a person
-4|orchestra|A large group of musicians who play together
-4|tirelessly|Without ever getting tired or stopping
-4|conductor|The person who leads an orchestra
-4|precision|Exactness and accuracy
-4|tolerate|To accept something without protest
-4|mistakes|Errors or wrong actions
-4|government|The group of people who rule a country
-4|sustainable|Able to continue without harming the environment
-4|conserve|To protect something and use it carefully
-4|environment|The natural world around us
-4|generations|Groups of people born around the same time
-4|skilled|Having the ability to do something well
-4|surgeon|A doctor who performs operations
-4|composed|Calm and in control of your feelings
-4|complicated|Having many parts and hard to understand
-4|patient|A person who is receiving medical care
-4|ambassador|An official who represents their country abroad
-4|diplomatic|Careful and tactful when dealing with people
-4|conflict|A serious disagreement or fight
-4|nations|Countries with their own governments
-4|harmony|A state of peaceful agreement
-4|ambition|A strong desire to achieve something
-4|perseverance|Continuing to try despite difficulty
-4|overcome|To succeed in dealing with a problem
-4|obstacle|Something that blocks your way
-4|success|The achievement of a goal
-4|researchers|People who study a subject to discover new facts
-4|excavated|Dug up carefully from the ground
-4|temple|A building used for worship
-4|preserved|Kept safe from damage or decay
-4|artifact|An object made by people a long time ago
-5|skepticism|A doubtful attitude about whether something is true
-5|philosopher|A person who studies the meaning of knowledge and life
-5|meticulous|Showing great attention to detail
-5|challenged|Questioned the truth or value of something
-5|conventional|Following accepted traditions
-5|morality|Principles about what is right and wrong
-5|entrepreneur|Someone who starts a new business
-5|resilience|The ability to recover quickly from difficulty
-5|startup|A newly created business
-5|catastrophic|Causing sudden and great damage
-5|innovative|Using new ideas or methods
-5|remarkable|Worthy of attention because it is unusual
-5|algorithms|Step-by-step procedures for solving problems
-5|efficient|Working well without wasting time or effort
-5|complexity|The state of having many connected parts
-5|unavoidable|Impossible to prevent
-5|optimization|Making something as effective as possible
-5|redundancy|Unnecessary repetition
-5|archipelago|A group of many islands
-5|uninhabited|Having no people living there
-5|explorers|People who travel to discover unknown places
-5|abundant|Existing in large quantities
-5|resources|Supplies of useful materials
-5|fertile|Able to produce plentiful crops
-5|persistent|Continuing firmly despite opposition
-5|investigator|A person who examines something closely to find facts
-5|scrutinized|Examined very closely
-5|anomaly|Something that differs from what is normal
-5|plausible|Seeming reasonable and likely to be true
-5|reconciled|Made two things agree or fit together
-5|evidence|Facts that show whether something is true
-5|philanthropist|A person who gives money to help others
-5|generous|Willing to give more than is expected
-5|alleviating|Making a problem less severe
-5|hardship|Severe suffering or difficulty
-5|poverty|The state of being extremely poor
-5|adversity|Difficulty or misfortune
-1|squirrel|A bushy-tailed rodent that lives in trees and gathers nuts
-1|acorns|The oval nuts of an oak tree
-1|branches|The limbs that grow out from the trunk of a tree
-1|forest|A large area of land covered thickly with trees
-1|winter|The coldest season of the year
-1|painter|An artist who paints pictures
-1|colors|Hues such as red, blue, and yellow seen in light
-1|palette|A thin board on which an artist mixes paints
-1|sunset|The time in the evening when the sun goes down
-1|harbor|A sheltered port where ships can dock safely
-1|postman|A worker who delivers mail to homes
-1|envelope|A flat paper wrapper used to enclose a letter
-1|parcel|Something wrapped up into a package to be sent
-1|cottage|A small, cozy house in the country
-1|hillside|The sloping side of a hill
-1|sailors|Members of a ship's crew
-1|canvas|Strong, coarse cloth used for sails and tents
-1|breeze|A gentle, pleasant wind
-1|vessel|A large boat or ship
-1|bay|A broad inlet of the sea where the land curves inward
-1|blacksmith|A craftsperson who makes and repairs iron objects
-1|horseshoe|A U-shaped iron band nailed to a horse's hoof
-1|furnace|An enclosed chamber heated to very high temperatures
-1|anvil|A heavy iron block on which metal is hammered into shape
-1|librarian|A person in charge of a library
-1|volumes|Books, especially ones that are part of a set
-1|shelves|Flat boards attached to a wall or frame to hold things
-1|reading|Looking at and understanding written words
-1|horses|Large four-legged animals used for riding and pulling loads
-1|meadow|An open field of grass and wildflowers
-1|thunder|The loud rumbling sound that follows lightning
-1|canyon|A deep gorge with steep cliff sides
 1|baker|A person who makes bread and cakes
+1|bread|Baked food made from flour, often sliced
+1|soup|A warm liquid food made from vegetables or meat
+1|town|A populated place smaller than a city
+1|frog|A small green animal that jumps and lives near water
+1|mouse|A tiny furry rodent with a long thin tail
+1|rock|A hard piece of solid mineral from the earth
+1|stone|A small piece of hard rock
+1|river|A large stream of water flowing toward the sea
+1|pear|A sweet fruit that is narrow at the top and wide at the bottom
+1|plum|A small round purple or red fruit with a pit inside
+1|melon|A large round fruit with sweet juicy flesh
+1|juice|Liquid squeezed from fruits or vegetables
+1|lunch|A meal eaten in the middle of the day
+1|lake|A large body of still water surrounded by land
+1|pupil|A young student learning in school
+1|desk|A table with drawers used for reading or writing
+1|book|Printed pages bound together for reading
+1|study|To spend time learning about a subject
+1|story|A tale about real or imaginary events
+1|poem|A piece of writing arranged in short lines, often with rhyme
+1|dusk|The darker stage of twilight just before night
+1|moon|The bright object that shines in the sky at night
+1|cabin|A small wooden house in the woods
+1|sheep|A woolly farm animal raised for fleece and meat
+1|hill|A naturally raised area of land, smaller than a mountain
+1|duck|A waterbird with a broad bill and webbed feet
+1|goose|A large waterbird with a long neck and webbed feet
+1|pond|A small body of still water
+1|water|Clear liquid that falls as rain and fills rivers and lakes
+1|wings|Feathered limbs that birds use to fly
+1|pilot|A person who flies an aircraft
+1|plane|A winged vehicle that flies through the air
+1|cloud|A white or gray mass floating high in the sky
+1|city|A large and busy town where many people live
+1|ship|A large vessel that travels across the ocean
+1|coast|The land near the edge of the sea
+1|hiker|A person who walks long distances on nature trails
+1|path|A narrow track made for walking
+1|trail|A marked route through a forest or over hills
+1|park|A public green area in a town used for rest and play
+1|shade|A cool dark area blocked from direct sunlight
+1|smith|A craftsperson who shapes heated metal with a hammer
+1|iron|A strong dark gray metal used to make tools
+1|metal|A solid material such as iron, gold, or copper
+1|fire|Heat and bright light produced by burning wood or coal
+1|flame|A glowing tongue of fire
+1|anvil|A heavy iron block on which heated metal is hammered
+1|clerk|A worker in a shop who helps customers and keeps records
+1|sack|A large bag made of coarse cloth or thick paper
+1|boxes|Containers with flat sides and lids used for storage
+1|rack|A frame with bars or hooks for holding things
+1|shelf|A flat board attached to a wall or frame to hold items
+1|store|A shop where goods are kept and sold
+1|deer|A hoofed forest animal, the male of which usually has antlers
+1|goats|Horned farm or mountain animals known for climbing
+1|cliff|A steep rock face, often at the edge of the sea or a mountain
+1|wind|Moving air blowing across the land
+1|farm|Land and buildings used for growing crops and raising animals
+1|field|An open area of land, often used for pasture or crops
+1|chef|A professional cook
+1|milk|A white liquid produced by cows and used as food
+1|flour|Powder made by grinding grain, used to bake bread
+1|sugar|Sweet white crystals added to food and drinks
+1|bowl|A round deep dish used for holding food or mixing ingredients
 1|dough|A thick mixture of flour and liquid used for baking
-1|cinnamon|A sweet, aromatic spice made from tree bark
-1|pastries|Baked goods made with rich dough, such as pies or tarts
-1|fisherman|A person who catches fish for a living or sport
-1|tangled|Twisted together into a messy knot
+1|boat|A small vessel for traveling on water
 1|pier|A wooden platform extending from the shore over water
-1|seagulls|White and gray seabirds often found near coasts
-2|astronaut|A person trained to travel and work in outer space
-2|luminous|Giving off bright light; glowing in the dark
-2|telescope|An optical instrument that makes distant objects appear closer
-2|orbital|Relating to the curved path of an object around a planet
-2|botanist|A scientist who studies plants
-2|specimens|Individual examples of plants, animals, or minerals collected for study
-2|tropical|Coming from hot and humid regions near the equator
-2|canopy|The high, leafy roof formed by the tops of trees
-2|watchmaker|A craftsperson who makes and repairs clocks and watches
-2|gears|Toothed wheels that work together inside a machine
-2|springs|Coiled pieces of metal that return to shape after being pressed
-2|antique|A collectible item that is very old and valuable
-2|rainfall|The amount of rain that falls over an area
-2|reservoir|A large natural or artificial lake used as a water supply
-2|adjacent|Next to or adjoining something else
-2|orchards|Pieces of land planted with fruit trees
-2|composer|A person who writes music
-2|melody|A sequence of musical notes that forms a tune
+1|gulls|White and gray seabirds often found near the coast
+1|wave|A raised ridge of water moving across the sea
+1|sand|Tiny loose grains of rock found on beaches and deserts
+1|beach|A sandy or pebbly shore by the ocean or a lake
+1|coat|An outer garment with sleeves worn to stay warm outdoors
+1|scarf|A strip of cloth worn around the neck for warmth
+1|boots|Sturdy shoes that cover the foot and ankle
+1|snow|Soft white flakes of frozen water that fall in winter
+1|frost|A thin layer of ice crystals that forms on cold surfaces
+1|porch|A covered shelter attached to the entrance of a house
+2|rabbit|A small furry animal with long ears that hops
+2|garden|A piece of land where flowers or vegetables grow
+2|bridge|A structure built to cross over a river or road
+2|stream|A small narrow river flowing through the land
+2|basket|A woven container used for carrying things
+2|apples|Round red or green fruits that grow on trees
+2|cheese|A solid food made from pressed milk curds
+2|butter|A soft yellow dairy spread made by churning cream
+2|picnic|An outdoor meal eaten in a park or the countryside
+2|farmer|A person who grows crops or raises animals
+2|meadow|An open field of grass and wildflowers
+2|sunset|The time in the evening when the sun goes down
+2|cattle|Cows and bulls raised on a farm or ranch
+2|sailor|A member of a boat or ship crew
+2|vessel|A large boat or ship
+2|harbor|A sheltered port where ships can dock safely
+2|breeze|A gentle, pleasant wind
+2|artist|A person who creates paintings or drawings
+2|colors|Hues such as red, blue, and yellow seen in light
+2|canvas|Strong coarse cloth used for painting or sails
+2|canyon|A deep valley with steep rock cliffs on each side
+2|winter|The coldest season of the year
+2|forest|A large area of land covered thickly with trees
+2|acorns|The oval nuts that grow on oak trees
+2|leaves|Flat green parts of a plant or tree that grow from stems
+2|driver|A person who steers and operates a vehicle
+2|trucks|Large motor vehicles built for carrying heavy loads
+2|market|A place where people gather to buy and sell goods
+2|parcel|Something wrapped up into a package to be delivered
+2|guests|People invited to visit or eat at your home
+2|dinner|The main meal of the day, usually eaten in the evening
+2|tables|Pieces of furniture with flat tops supported by legs
+2|pastry|Baked food made with rich, flaky dough
+2|doctor|A person trained to treat people who are sick or hurt
+2|clinic|A medical center where patients go for care
+2|person|An individual human being
+2|sprain|A painful twist or wrench of the ligaments in a joint
+2|dancer|A person who moves rhythmically to music
+2|rhythm|A strong, regular repeated pattern of sound or movement
 2|violin|A four-stringed wooden musical instrument played with a bow
-2|audience|The group of people gathered to watch or listen to a performance
-2|artisans|Skilled craftspeople who make things by hand
-2|intricate|Very detailed and complicated in design
-2|marble|A hard, smooth stone often used for sculpture and buildings
-2|courtyard|An unroofed area enclosed by walls or buildings
-2|mountaineer|A person who climbs mountains
-2|treacherous|Full of hidden dangers or hazards
-2|compass|An instrument with a magnetized pointer that shows north
-2|climbing|Moving upward using hands and feet
-2|journalist|A person who writes news stories for newspapers or broadcasts
-2|witnesses|People who see an event happen first-hand
-2|details|Individual facts or small features of something
-2|incident|An unexpected event or occurrence
-2|naturalist|An expert who studies plants and animals in nature
-2|seasonal|Happening during a particular time of the year
-2|migration|The seasonal movement of animals from one region to another
-2|continent|One of the world's main continuous expanses of land
-3|archaeologist|A scientist who studies human history by digging up ancient sites
-3|inscriptions|Words carved or engraved into stone, metal, or monuments
-3|limestone|A sedimentary rock composed mainly of calcium carbonate
-3|forgotten|No longer remembered
-3|dynasty|A line of hereditary rulers of a country
-3|urbanization|The process by which towns and cities grow larger
-3|province|A principal administrative division of a country or empire
-3|bustling|Full of lively and noisy activity
-3|infrastructure|The basic physical systems of a place, such as roads and power
-3|biologist|A scientist who studies living organisms
-3|predators|Animals that naturally hunt and eat other animals
-3|camouflage|Coloring or patterns that help an animal blend into its surroundings
-3|hostile|Unfriendly, harsh, or unfavorable to life
-3|ecosystems|Communities of interacting organisms and their physical environment
-3|negotiation|Formal discussion aimed at reaching an agreement
-3|mediator|A neutral person who helps opposing sides reach an agreement
-3|compromise|An agreement reached by each side making concessions
-3|factions|Small, organized dissenting groups within a larger one
-3|dispute|A disagreement or argument
-3|meteorologist|A scientist who studies the atmosphere and weather
-3|atmospheric|Relating to the envelope of gases surrounding the earth
-3|forecast|To predict or estimate a future event or weather trend
-3|cyclone|A system of winds rotating inward to an area of low pressure
-3|historian|An expert in or student of history
-3|medieval|Relating to the Middle Ages
-3|manuscripts|Books or documents written by hand rather than printed
-3|chronicle|A factual written account of important historical events
-3|fortress|A heavily protected military stronghold or castle
-3|regulations|Official rules or directives made and maintained by an authority
-3|industrial|Relating to factories, manufacturing, and industry
-3|emissions|Gases and substances discharged into the air
-3|watershed|An area of land that drains all streams and rainfall into a common outlet
-3|astronomer|A scientist who studies stars, planets, and space
-3|celestial|Positioned in or relating to the sky or outer space
-3|distant|Far away in space or time
-3|nebula|A giant cloud of dust and gas in outer space
-3|galaxy|A massive system of billions of stars held together by gravity
-3|experienced|Having knowledge and skill gained over time
-3|navigator|A person who directs the route or course of a ship or aircraft
-3|corridor|A narrow passage or safe route through an area
-3|turbulent|Rough, chaotic, and full of violent movement
-3|visibility|The distance one can clearly see under given weather conditions
-4|neuroscientist|A scientist who studies the brain and nervous system
-4|synaptic|Relating to the junctions between nerve cells
-4|consolidate|To make something physically stronger or more solid
-4|prolonged|Continuing for a long time or longer than usual
-4|slumber|A state of sleep
-4|mounting|Growing larger or more intense over time
-4|treasury|The government department responsible for managing public finance
-4|stringent|Strict, precise, and exacting
-4|measures|Official actions taken to achieve a particular purpose
-4|currency|A system of money in general use in a country
-4|playwright|A person who writes plays for the theater
-4|satirical|Using humor or irony to expose and criticize foolishness
-4|exposed|Uncovered and made visible or known
-4|hypocrisy|Claiming to have moral standards to which one's own behavior does not conform
-4|vanity|Excessive pride in or admiration of one's own appearance or achievements
-4|aristocracy|The highest social class in certain societies, typically nobility
-4|postulated|Suggested or assumed the existence or truth of something as a basis for reasoning
-4|tectonic|Relating to the structure and movement of the earth's crust
-4|generated|Produced or brought into existence
-4|formidable|Inspiring fear or respect through being impressively large or powerful
-4|millennia|Periods of one thousand years
-4|cryptographer|A specialist who writes or cracks secret codes and ciphers
-4|ingenious|Clever, original, and inventive
-4|withstood|Remained undamaged or unaffected by a force or attack
-4|systematic|Done according to a fixed plan or system; methodical
-4|decryption|The process of converting coded data back into its original form
-4|reformers|People who campaign to bring about social or political change
-4|advocated|Publicly recommended or supported a particular cause or policy
-4|equitable|Fair and impartial toward everyone concerned
-4|abolished|Formally put an end to a system, practice, or institution
-4|statute|A written law passed by a legislative body
-4|epidemiologist|A scientist who studies the spread and control of diseases
-4|contagion|The communication of disease from one person to another
-4|contaminated|Made impure by exposure to or addition of a poisonous substance
-4|mandated|Officially required or ordered by law
-4|quarantine|Strict isolation imposed to prevent the spread of disease
-4|astute|Having an ability to accurately assess situations and turn this to advantage
-4|curator|A keeper or custodian of a museum or art collection
-4|provenance|The place of origin or earliest known history of an artwork
+2|crowds|Large numbers of people gathered together in one place
+2|castle|A large stone building with towers and high walls from the past
+2|knight|A mounted soldier in armor who served a king or lord
+2|shield|A broad piece of metal or wood carried for protection
+2|helmet|A hard protective hat worn to guard the head
+2|hearth|The stone floor or area in front of a fireplace
+2|tailor|A person whose job is making and mending clothes
+2|jacket|A short coat worn on the upper body
+2|needle|A thin pointed piece of steel with an eye for sewing thread
+2|thread|A long thin strand of cotton or wool used for sewing
+2|button|A small disk sewn onto clothing to fasten it closed
+2|monkey|A lively long-tailed animal that climbs trees in warm forests
+2|jungle|Land overgrown with dense forest and tangled vegetation
+2|branch|A limb that grows out from the trunk of a tree
+2|banana|A long curved fruit with yellow skin and soft sweet flesh
+2|orange|A round juicy citrus fruit with a bright reddish-yellow rind
+2|author|A writer of a book, story, or article
+2|letter|A written message sent to someone, usually in an envelope
+2|pencil|A wooden writing tool with a core of graphite lead
+2|window|An opening in a wall fitted with glass to let in light
+2|storms|Periods of rough weather with strong wind and rain
+2|island|Land that is completely surrounded by water
+2|timber|Wood prepared for use in building and carpentry
+2|chapel|A small building or room used for prayer and worship
+3|morning|The early part of the day after sunrise
+3|teacher|A person whose job is to help students learn
+3|student|A person who studies at a school or college
+3|history|The study of past events and how people lived long ago
+3|chapter|A main section of a book
+3|journey|A long trip from one place to another
+3|captain|The person in command of a ship or team
+3|village|A very small town in the countryside
+3|shelter|A place that protects you from bad weather or danger
+3|evening|The part of the day between late afternoon and night
+3|painter|An artist who paints pictures
+3|crimson|A rich deep red color
+3|palette|A thin board on which an artist mixes paints
+3|picture|A drawing, painting, or photograph
+3|country|Rural land outside of large towns and cities
+3|postman|A worker who delivers mail and packages to homes
+3|package|An object or group of objects wrapped in a box or paper
+3|message|A written or spoken piece of information sent to someone
+3|cottage|A small, cozy house in the country
+3|station|A regular stopping place for trains or buses
+3|thunder|The loud rumbling sound that follows a flash of lightning
+3|showers|Short periods of rain
+3|orchard|A piece of enclosed land planted with fruit trees
+3|harvest|The season or act of gathering ripe crops from the fields
+3|baskets|Woven containers used for holding or carrying items
+3|tourist|A person who travels to visit a place for pleasure
+3|compass|An instrument with a magnetic pointer that shows north
+3|lantern|A portable lamp with a clear protective cover
+3|ancient|Belonging to the very distant past; very old
+3|passage|A narrow way or hall allowing movement from one place to another
+3|kitchen|A room where food is kept, prepared, and cooked
+3|brother|A boy or man who has the same parents as another person
+3|cookies|Small flat sweet baked treats
+3|muffins|Small cup-shaped quick breads often eaten for breakfast
+3|vanilla|A sweet flavoring made from the pods of a tropical orchid
+3|friends|People you know well and like spending time with
+3|plumber|A worker who installs and repairs water pipes and fixtures
+3|toolbox|A case used for carrying and organizing hand tools
+3|leaking|Letting water or liquid escape through a crack or hole
+3|faucets|Taps that control the flow of water from a pipe
+3|hallway|A long narrow corridor or entrance area inside a building
+3|athlete|A person who is trained and skilled in sports
+3|weather|The state of the air outside, such as wind, rain, or sunshine
+3|victory|Success in winning a game, contest, or struggle
+3|stadium|A large sports arena with rows of seats for spectators
+3|contest|A competition in which people try to win
+3|library|A building or room containing collections of books to borrow or read
+3|shelves|Flat boards mounted on walls or frames to hold books and items
+3|stories|Tales told or written about real or imagined events
+3|science|The study of the natural world through observation and tests
+3|volumes|Books, especially ones that belong to a larger set
+3|reading|Looking at and understanding written or printed words
+3|soldier|A person who serves in an army
+3|kingdom|A country or land ruled by a king or queen
+3|borders|The lines that separate one country or area from another
+3|courage|Bravery and strength in the face of danger or difficulty
+3|loyalty|Faithful support and devotion to a friend, group, or country
+3|winters|Cold seasons of the year when snow often falls
+3|spotted|Marked with round dots or patches of a different color
+3|leopard|A large wild cat with a yellowish coat and dark spots
+3|thicket|A dense group of bushes and small trees growing closely together
+3|leaping|Jumping high or a long way in a single bound
+3|massive|Very large, heavy, and solid
+3|boulder|A very large rounded rock worn smooth by water or weather
+3|builder|A person whose job is constructing houses and buildings
+3|ceiling|The upper inside surface of a room
+3|cabinet|A cupboard with shelves or drawers for storing things
+3|corners|Places where two walls, edges, or streets meet
+3|plywood|Strong thin wooden board made from glued layers of wood
+3|candles|Sticks of wax with a central wick that burn to give light
+3|banquet|A large formal meal prepared for many people
+3|chamber|A large room in a palace or historic building
+3|singers|People who perform music using their voices
+3|musical|Relating to or filled with the pleasant sounds of music
+3|concert|A live musical performance given in front of an audience
+3|surgeon|A doctor who performs medical operations
+3|patient|A person receiving care or treatment from a doctor
+3|records|Written accounts kept as permanent information
+3|helpful|Useful and willing to give assistance
+3|summary|A brief statement of the main points of something
+3|results|The outcomes or findings at the end of a test
+4|children|Young boys and girls
+4|branches|The limbs that grow out from the trunk of a tree
+4|pinecone|The woody seed cone that grows on a pine tree
+4|woodland|Land covered with trees and forest shrubs
+4|campfire|An outdoor fire built at a campsite for warmth or cooking
+4|shepherd|A person who takes care of and guards a flock of sheep
+4|peaceful|Calm and quiet, free from noise or trouble
+4|hillside|The sloping side of a hill
+4|sunshine|The light and warmth that come from the sun
+4|twilight|The soft glowing light in the sky just after sunset
+4|explorer|A person who travels to unfamiliar places to learn about them
+4|backpack|A bag with shoulder straps carried on the back
+4|notebook|A small book of blank or lined pages for writing notes
+4|umbrella|A folding canopy held over the head for shelter from rain
+4|mountain|A very high and steep natural elevation of the earth
+4|students|People who study at a school or college
+4|homework|Schoolwork assigned to be completed at home
+4|projects|Planned pieces of work or study that take time and effort
+4|spacious|Having plenty of room to move around
+4|computer|An electronic machine that stores data and runs programs
+4|squirrel|A bushy-tailed rodent that lives in trees and gathers nuts
+4|backyard|A yard or garden behind a house
+4|chestnut|A glossy brown nut that grows inside a prickly burr
+4|hazelnut|A small round edible nut from a hazel tree
+4|fountain|A structure that sends jets of water into the air
+4|musician|A person who plays a musical instrument or writes music
+4|graceful|Moving in a smooth, relaxed, and attractive way
+4|serenade|A piece of music played or sung in the open air
+4|keyboard|A row of keys on a piano or musical instrument
+4|audience|The group of people gathered to watch or listen to a show
+4|festival|A day or period of celebration with music, food, and games
+4|cinnamon|A sweet, warm spice made from the inner bark of a tree
+4|pastries|Baked goods made with rich dough, such as tarts or rolls
+4|sandwich|Two slices of bread with a filling of meat, cheese, or vegetables
+4|lemonade|A sweet cold drink made from lemon juice, water, and sugar
+4|friendly|Kind, pleasant, and welcoming toward others
+4|merchant|A person who buys and sells goods at a shop or market
+4|rainfall|The amount of rain that falls over an area
+4|pavement|The hard paved surface of a road or walkway
+4|sidewalk|A paved path for pedestrians along the side of a street
+4|traveler|A person who is making a trip or journey
+4|terminal|A main station or building where bus, train, or air routes end
+4|director|A person who leads or manages a project, play, or museum
+4|talented|Having a natural skill or ability to do something well
+4|painting|A picture made using paint on canvas, wood, or paper
+4|designer|A person who plans the look and form of objects or rooms
 4|portrait|A painting, drawing, or photograph of a person
-4|radiocarbon|A radioactive isotope of carbon used to date ancient organic materials
-4|symphony|An elaborate musical composition for a full orchestra
-4|crescendo|A gradual increase in loudness in a piece of music
-4|reverberated|Echoed repeatedly through a large space
-4|auditorium|The part of a theater or concert hall where the audience sits
-4|spectators|People who watch a show, game, or other event
-4|spellbound|Having one's attention completely held as if by magic
-5|epistemologist|A philosopher who studies the nature, origin, and limits of human knowledge
-5|empirical|Based on observation or experience rather than pure theory
-5|substantiate|To provide solid evidence to support or prove the truth of a claim
-5|metaphysical|Relating to abstract philosophical thought about reality and existence
-5|rigorous|Extremely thorough, exhaustive, and accurate
-5|deductive|Characterized by reasoning from general principles to specific conclusions
-5|anthropogenic|Originating from human activity, especially environmental pollution
-5|precipitated|Caused an event or situation, typically an undesirable one, to happen suddenly
-5|irreversible|Impossible to undo or restore to a previous condition
-5|biodiversity|The variety of plant and animal life in the world or in a habitat
-5|imperiling|Putting at risk of being harmed, injured, or destroyed
-5|trophic|Relating to feeding and nutrition within a food web
-5|jurisprudence|The theory, philosophy, or system of law
-5|ambiguous|Open to more than one interpretation; not having one obvious meaning
-5|preclude|To prevent from happening; to make impossible
-5|arbitrary|Based on random choice or personal whim, rather than reason or system
-5|constitutional|Relating to an established set of principles governing a state
-5|sovereignty|Supreme power or authority of a state to govern itself
-5|spectroscopic|Relating to the measurement of spectra produced when matter interacts with light
-5|astrophysicists|Scientists who study the physical nature of stars and celestial bodies
-5|primordial|Existing at or from the very beginning of time
-5|interstellar|Occurring or situated between stars
-5|coalescing|Coming together to form one mass or whole
-5|protoplanetary|Relating to a rotating disk of dense gas surrounding a young newly formed star
-5|iconoclastic|Attacking or criticizing cherished beliefs or traditional institutions
-5|repudiated|Refused to accept or be associated with; rejected as invalid
-5|orthodox|Conforming to what is generally or traditionally accepted as right
-5|parsimonious|Explaining things using the fewest possible assumptions; frugal
-5|synthesized|Combined separate elements or ideas into a coherent whole
-5|phenomena|Observable facts, occurrences, or circumstances
-5|malfeasance|Wrongdoing or misconduct, especially by a public official
-5|fiscal|Relating to government revenue, taxes, and public money
-5|profligacy|Reckless extravagance or wastefulness in the use of resources
-5|legitimacy|Conformity to the law or to rules; ability to be defended with logic
-5|exacerbating|Making a problem, bad situation, or negative feeling worse
-5|stratification|The arrangement or classification of society into hierarchical layers
-5|polity|An organized society or state as a political entity
-5|mitigate|To make less severe, serious, or painful
-5|fragility|The quality of being easily broken, damaged, or disrupted
-5|consortium|An association of several organizations or companies working together
-5|decentralized|Distributed away from a single central location or authority
-5|withstanding|Standing up against or resisting a damaging force
-5|cataclysmic|Relating to a large-scale and violent natural or social upheaval
-5|incursions|Sudden, hostile invasions or attacks into a territory or system
-5|paleontologist|A scientist who studies fossils to understand ancient life
-5|stratigraphic|Relating to the study of rock layers and layering in geology
-5|decimated|Destroyed or killed a large proportion of a population
-5|organisms|Individual living things, such as plants, animals, or bacteria
-5|biospheres|The regions of the surface and atmosphere of a planet occupied by living things
-5|pellucid|Translucently clear; easily understood and lucid in style
-5|elucidated|Made something clear; explained thoroughly
-5|intricacies|Complex details and interconnected parts
-5|entanglement|A quantum phenomenon where particles remain connected across distance
-5|dispelling|Making a doubt, feeling, or belief disappear
-5|misconceptions|Views or opinions that are incorrect because they are based on faulty thinking
-5|contemporaries|People living or working at the same time as another
-5|plenipotentiary|A diplomat invested with full power to take independent action
-5|labyrinthine|Irregular, twisting, and complicated like a maze
-5|impasse|A situation in which no progress is possible, especially because of disagreement
-5|consummate|Showing a high degree of skill and flair; complete or perfect
-5|equanimity|Mental calmness, composure, and evenness of temper in a difficult situation
-5|belligerent|Hostile, aggressive, and eager to fight
-5|juxtaposing|Placing two or more things side by side for contrasting effect
-5|antithetical|Directly opposed or contrasted; mutually incompatible
-5|historiographer|A scholar who studies the writing and methods of history
-5|ephemeral|Lasting for a very short time
-5|hegemonic|Ruling or dominant in a political or social context
-5|ideologies|Systems of ideas and ideals, especially ones forming the basis of policy
-5|efficacy|The ability to produce a desired or intended result
-5|attenuated|Reduced the force, effect, or value of something
-5|idiosyncratic|Peculiar or individual to a specific person or system
-5|bespoke|Custom-made for a particular person, need, or purpose
-5|regimens|Prescribed courses of medical treatment, diet, or exercise
-5|refractory|Resistant to a process, stimulus, or medical treatment
+4|corridor|A long narrow hallway with doors leading into rooms
+4|gardener|A person who tends and cultivates a garden
+4|daffodil|A bright yellow spring flower with a trumpet-shaped center
+4|lavender|A fragrant plant with pale purple flowers
+4|blossoms|Flowers on a tree or bush, especially in spring
+4|driveway|A short private road leading from the street to a house
+4|birdbath|A shallow basin filled with water for birds to bathe in
+4|mechanic|A skilled worker who repairs machines and vehicles
+4|steering|The wheel and parts used to guide the direction of a vehicle
+4|radiator|A device that cools an engine or heats a room
+4|workshop|A room or building where tools are used to make or fix things
+4|midnight|Twelve o'clock at night; the middle of the night
+4|seagulls|White and gray seabirds often seen near coasts and harbors
+4|sailboat|A boat propelled across the water by wind in its sails
+4|lifeboat|A rescue boat carried on a ship or kept at the shore
+4|southern|Located in or facing toward the south
+4|seashore|Land right along the edge of the sea
+4|birthday|The anniversary of the day on which a person was born
+4|greeting|Polite words or a message of welcome and good wishes
+4|envelope|A flat paper wrapper used to enclose a letter or card
+4|calendar|A chart showing the days, weeks, and months of the year
+4|schedule|A timetable listing planned events and the times they happen
+4|villager|A person who lives in a small country village
+4|valuable|Worth a great deal of money or very important
+4|necklace|A piece of jewelry worn around the neck
+4|bracelet|An ornamental band or chain worn around the wrist
+4|treasure|A collection of gold, silver, jewels, or precious items
+4|climbers|People who scale rocks, cliffs, or mountains
+4|foothill|A low hill at the base of a higher mountain range
+4|overlook|A high place that offers a wide view of the land below
+4|majestic|Grand, impressive, and beautiful in appearance
+4|waterway|A river, canal, or channel along which boats can travel
+4|wildlife|Wild animals and birds living in their natural habitat
+5|grandmother|The mother of your mother or father
+5|delicious|Having a very pleasant taste or smell
+5|strawberry|A sweet red fruit with tiny seeds on its surface
+5|blueberry|A small round dark blue fruit that grows on bushes
+5|neighbors|People who live next door or on the same street
+5|breakfast|The first meal of the day, eaten in the morning
+5|butterfly|An insect with large, colorful wings
+5|dragonfly|A fast-flying insect with a long body and two pairs of clear wings
+5|sunflower|A tall plant with a very large golden-yellow flower head
+5|waterfall|A stream or river cascading down over a steep rocky drop
+5|countryside|Rural land and scenery outside of towns and cities
+5|afternoon|The part of the day from noon until evening
+5|blacksmith|A craftsperson who makes and repairs iron objects by hand
+5|horseshoe|A U-shaped iron band nailed to a horse's hoof
+5|workbench|A sturdy table at which a craftsperson or mechanic works
+5|carpenter|A skilled worker who builds and repairs wooden structures
+5|furniture|Movable items such as tables, chairs, and beds in a room
+5|downstairs|On or to a lower floor of a house or building
+5|librarian|A person in charge of organizing and running a library
+5|paperback|A book bound in a flexible paper cover
+5|textbooks|Books used for studying a particular subject in school
+5|magazines|Illustrated periodicals containing articles and stories
+5|bookshelf|A shelf or frame holding rows of books
+5|classroom|A room in a school where lessons take place
+5|astronaut|A person trained to travel and work in outer space
+5|telescope|An optical instrument that makes distant objects look closer
+5|spaceship|A vehicle designed to fly through outer space
+5|satellite|A spacecraft or body that orbits around a planet
+5|meteorite|A piece of rock or metal from space that lands on earth
+5|overnight|Continuing through the course of an entire night
+5|fisherman|A person who catches fish for a living or for sport
+5|rainboots|Waterproof boots worn to keep feet dry in wet weather
+5|raincoats|Waterproof coats worn for protection from the rain
+5|houseboat|A boat designed and equipped to be used as a home
+5|rainstorm|A heavy storm with strong winds and pouring rain
+5|lightning|A bright flash of electricity in the sky during a storm
+5|passenger|A traveler riding in a train, bus, plane, or car
+5|newspaper|Printed sheets published daily with news and articles
+5|chocolate|A sweet food made from roasted and ground cacao seeds
+5|croissant|A flaky, crescent-shaped French breakfast roll
+5|concourse|A large open hall in a train station or airport
+5|escalator|A moving staircase that carries people between floors
+5|wednesday|The day of the week between Tuesday and Thursday
+5|community|A group of people living together in the same area
+5|volunteer|A person who freely offers to help without being paid
+5|vegetable|A plant or part of a plant eaten as food, such as a carrot
+5|pineapple|A large tropical fruit with rough skin and sweet yellow flesh
+5|courtyard|An unroofed area enclosed by walls or buildings
+5|detective|A person whose job is investigating and solving crimes
+5|flashlight|A small battery-powered electric lamp held in the hand
+5|footprints|Marks left on the ground by a person's feet or shoes
+5|mysterious|Strange, puzzling, and difficult to explain
+5|warehouse|A large building where goods and supplies are stored
+5|vandalism|Deliberate damage or destruction done to property
+5|orchestra|A large group of musicians who play instruments together
+5|conductor|The person who stands in front and leads an orchestra
+5|wonderful|Extremely good, pleasant, or admirable
+5|classical|Traditional in style, especially orchestral music
+5|spectator|A person who watches a show, game, or public event
+5|gathering|An assembly or meeting of people in one place
+5|travelers|People who go on trips from place to place
+5|adventure|An exciting and daring experience or journey
+5|evergreen|A tree that keeps its green leaves or needles all year
+5|mountains|Very high, steep hills rising far above the surrounding land
+5|guidebook|A book of information about a place for visitors and hikers
+5|binocular|Adapted for both eyes, used for viewing distant scenery
+5|shopkeeper|The owner or manager of a retail store
+5|glassware|Drinking glasses, bowls, and objects made of glass
+5|tableware|Dishes, plates, and utensils used for setting a table
+5|appliance|A household machine such as a toaster, stove, or mixer
+5|tablecloth|A cloth spread over a table before setting out dishes
+5|storefront|The side of a shop facing the street, usually with display windows
+5|snowstorm|A heavy fall of snow accompanied by strong wind
+5|snowflake|A single tiny feathery crystal of falling snow
+5|windshield|The front window of a car, truck, or bus
+5|ambulance|A special vehicle used to take sick or injured people to a hospital
+5|boulevard|A wide city street, often lined with trees on both sides
+5|infirmary|A place or ward where sick or injured people are cared for
+5|architect|A person who designs buildings and oversees their construction
+5|blueprint|A detailed plan or technical drawing for a building
+5|penthouse|An apartment built on the top floor of a tall building
+5|apartment|A set of rooms for living in, usually on one floor of a building
+5|fireplace|A brick or stone structure in a room for holding an indoor fire
+5|staircase|A set of stairs and its surrounding handrail inside a building
+5|playground|An outdoor area provided for children to play in
+5|teammates|Fellow members who play together on the same sports team
+5|basketball|A game played by two teams throwing a ball through a high hoop
+5|volleyball|A game in which two teams hit a ball by hand over a high net
+5|announcer|A person who introduces players and gives commentary at a game
+5|scorecard|A card or board on which the points of a game are recorded
+5|scientist|A person who studies the natural world through experiments
+5|biologist|A scientist who studies living plants and animals
+5|microscope|An instrument with lenses that magnifies tiny objects
+5|jellyfish|A free-swimming sea animal with a soft umbrella-shaped body
+5|crocodile|A large reptile with thick skin and long jaws that lives near rivers
+5|chameleon|A small lizard that can change the color of its skin
+5|watchmaker|A craftsperson who makes and repairs clocks and watches
+5|precision|Exactness, care, and accuracy in work
+5|instrument|A tool or device used for delicate work or for playing music
+5|clockwork|Machinery driven by gears and wound springs, as in a clock
+5|hourglass|A glass device with two bulbs that measures time with falling sand
+5|showrooms|Large rooms where goods are displayed for customers to inspect
+5|departure|The act of leaving to start a journey or flight
+5|attendant|A person employed to provide service and help to travelers
+5|suitcases|Rectangular cases with handles used for carrying clothes on trips
+5|backpacks|Bags with shoulder straps carried on the back by travelers
+5|parachute|A large cloth canopy that slows a person falling through the air
+5|aeroplane|A powered flying vehicle with fixed wings
