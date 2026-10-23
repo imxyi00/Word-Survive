@@ -14,9 +14,9 @@ final class LevelScreen extends Screen {
 
     LevelScreen(Main app) {
         super(app);
-        PixelButton back = new PixelButton(Assets.get("BACKBUTTON.png"));
+        PixelButton back = new PixelButton(Assets.trimmed("BackBlue.png"));
         back.addActionListener(e -> app.show("mode"));
-        place(back, 35, 12, 100, 93);
+        place(back, 40, 22, 129, 90);
         PixelButton settings = new PixelButton(Assets.get("settings_icon.png"));
         settings.addActionListener(e -> app.openSettings(null));
         place(settings, 1335, 10, 100, 100);

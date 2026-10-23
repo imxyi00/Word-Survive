@@ -7,27 +7,56 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 
 final class TitleScreen extends Screen {
+    private final JPanel quitConfirm = new JPanel(null) {
+        @Override protected void paintComponent(Graphics g0) {
+            Graphics2D g = (Graphics2D) g0;
+            UI.nearest(g);
+            g.setColor(new Color(15, 20, 35, 210));
+            g.fillRect(0, 0, getWidth(), getHeight());
+            g.setFont(UI.font(64));
+            g.setColor(Color.WHITE);
+            UI.text(g, "Quit?", 728, 232, 0, 700);
+        }
+    };
+
     TitleScreen(Main app) {
         super(app);
+        quitConfirm.setOpaque(false);
+        quitConfirm.setVisible(false);
+        quitConfirm.addMouseListener(new MouseAdapter() { });
+        PixelButton yes = new PixelButton("Yes"), no = new PixelButton("No");
+        yes.addActionListener(e -> System.exit(0));
+        no.addActionListener(e -> { quitConfirm.setVisible(false); repaint(); });
+        UI.place(quitConfirm, yes, 282, 408, 372, 128);
+        UI.place(quitConfirm, no, 813, 408, 372, 128);
+        quitConfirm.setBounds(0, 0, UI.W, UI.H);
+        add(quitConfirm);
+
+        PixelButton quit = new PixelButton(Assets.trimmed("Off.png"));
+        quit.addActionListener(e -> { quitConfirm.setVisible(true); repaint(); });
+        place(quit, 63, 51, 86, 94);
+
         PixelButton start = new PixelButton("Start");
         start.addActionListener(e -> app.show("choice"));
-        place(start, 533, 548, 372, 125);
+        place(start, 542, 547, 372, 128);
+        setComponentZOrder(quitConfirm, 0);
     }
-    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 175, 0.757); }
+    @Override void onShow() { quitConfirm.setVisible(false); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 141, 0.757); }
 }
 
 final class AuthChoiceScreen extends Screen {
     AuthChoiceScreen(Main app) {
         super(app);
-        PixelButton login = new PixelButton(Assets.get("LOGIN_BUTTON.png"));
-        PixelButton signup = new PixelButton(Assets.get("SIGNUP_BTN.png"));
+        PixelButton login = new PixelButton("Log In");
+        PixelButton signup = new PixelButton("Sign Up");
         login.addActionListener(e -> app.show("login"));
         signup.addActionListener(e -> app.show("signup"));
-        place(login, 215, 553, 370, 123);
-        place(signup, 845, 553, 370, 123);
-        addBack("title", 40, 30);
+        place(login, 214, 553, 372, 128);
+        place(signup, 843, 553, 372, 128);
+        addBack("title", 40, 45);
     }
-    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 140, 0.757); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 712, 141, 0.757); }
 }
 
 final class AuthScreen extends Screen {
@@ -39,20 +68,20 @@ final class AuthScreen extends Screen {
     AuthScreen(Main app, boolean signup) {
         super(app);
         this.signup = signup;
-        JLabel l1 = new JLabel("Email/Username", SwingConstants.RIGHT), l2 = new JLabel("Password", SwingConstants.RIGHT);
-        for (JLabel l : new JLabel[]{l1, l2}) { l.setFont(UI.font(34)); l.setForeground(Color.BLACK); }
-        place(l1, 60, 315, 650, 60);
-        place(l2, 60, 500, 650, 60);
-        place(user, 740, 285, 575, 125);
-        place(pass, 740, 470, 575, 125);
+        JLabel l1 = new JLabel("Email/Username", SwingConstants.CENTER), l2 = new JLabel("Password", SwingConstants.CENTER);
+        for (JLabel l : new JLabel[]{l1, l2}) { l.setFont(UI.font(38)); l.setForeground(Color.BLACK); }
+        place(l1, 82, 317, 632, 60);
+        place(l2, 82, 504, 632, 60);
+        place(user, 734, 284, 582, 125);
+        place(pass, 734, 471, 582, 125);
         msg.setFont(UI.font(26)); msg.setForeground(new Color(190, 25, 25));
         place(msg, 300, 598, 860, 40);
-        PixelButton play = new PixelButton(Assets.get("Play.png"));
+        PixelButton play = new PixelButton("Play");
         play.addActionListener(e -> submit());
         user.addActionListener(e -> pass.requestFocusInWindow());
         pass.addActionListener(e -> submit());
-        place(play, 515, 640, 370, 130);
-        addBack("choice", 40, 30);
+        place(play, 542, 641, 372, 128);
+        addBack("choice", 40, 45);
     }
 
     private void submit() {
@@ -71,7 +100,7 @@ final class AuthScreen extends Screen {
     }
 
     @Override void onShow() { user.setText(""); pass.setText(""); msg.setText(""); user.requestFocusInWindow(); }
-    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, signup ? "SIGNUPLBL.png" : "LOGINLBL.png", 712, 30, 0.757); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, signup ? "SIGNUPLBL.png" : "LOGINLBL.png", 728, 75, 0.757); }
 }
 
 final class AvatarScreen extends Screen {
@@ -120,17 +149,16 @@ final class MenuScreen extends Screen {
     MenuScreen(Main app) {
         super(app);
         header = true;
-        nameColor = Color.BLACK;
         String[] labels = {"Play", "Profile", "Options"};
         Runnable[] acts = {() -> app.show("mode"), () -> app.show("profile"), () -> app.openSettings(null)};
         for (int i = 0; i < 3; i++) {
             PixelButton b = new PixelButton(labels[i]);
             Runnable a = acts[i];
             b.addActionListener(e -> a.run());
-            place(b, 515, 288 + i * 157, 370, 125);
+            place(b, 542, 287 + i * 157, 372, 128);
         }
     }
-    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1252, 0, 0.349); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1236, 35, 0.349); }
 }
 
 final class StackScreen extends Screen {
@@ -141,11 +169,11 @@ final class StackScreen extends Screen {
             PixelButton b = new PixelButton(labels[i]);
             Runnable a = actions[i];
             b.addActionListener(e -> a.run());
-            place(b, 515, 288 + i * 157, 370, 125);
+            place(b, 542, 287 + i * 157, 372, 128);
         }
-        addBack(back, 45, 665);
+        addBack(back, 45, 685);
     }
-    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1252, 0, 0.349); }
+    @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1236, 35, 0.349); }
 }
 
 final class LeaderboardScreen extends Screen {
@@ -162,7 +190,7 @@ final class LeaderboardScreen extends Screen {
             tabs[i].addActionListener(e -> { selected = idx; refreshTabs(); repaint(); });
             place(tabs[i], 262 + i * 235, 40, 220, 90);
         }
-        addBack("mode", 45, 665);
+        addBack("mode", 45, 685);
     }
 
     private void refreshTabs() {

@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 abstract class Screen extends JPanel {
     protected final Main app;
     protected boolean clouds = true, dim = false, header = false;
-    protected Color nameColor = new Color(140, 140, 140);
+    protected Color nameColor = Color.BLACK;
     static int tick = 0;
     private BufferedImage bgCache;
     private String bgKey = "";
@@ -25,9 +25,9 @@ abstract class Screen extends JPanel {
     protected <T extends Component> T place(T c, double x, double y, double w, double h) { return UI.place(this, c, x, y, w, h); }
 
     protected PixelButton addBack(String target, double x, double y) {
-        PixelButton b = new PixelButton(Assets.get("BACKBUTTON.png"));
+        PixelButton b = new PixelButton(Assets.trimmed("BackBlue.png"));
         b.addActionListener(e -> app.show(target));
-        return place(b, x, y, 100, 93);
+        return place(b, x, y, 129, 90);
     }
 
     @Override protected void paintComponent(Graphics g0) {
@@ -46,10 +46,10 @@ abstract class Screen extends JPanel {
         if (clouds && app.theme == 0) UI.draw(g, Assets.get("cloud.png"), 200 + Math.sin(tick * 0.03) * 22, 64, 1105, 303);
         if (dim) { g.setColor(new Color(25, 25, 55, 150)); g.fillRect(0, 0, getWidth(), getHeight()); }
         if (header && app.user != null) {
-            Avatars.drawCircle(g, app.user.avatar, 30, 10, 165);
+            Avatars.drawCircle(g, app.user.avatar, 20, 10, 175);
             g.setFont(UI.font(38));
             g.setColor(nameColor);
-            UI.text(g, app.user.name, 215, 85, -1, 330);
+            UI.text(g, app.user.name, 220, 95, -1, 330);
         }
         paintExtra(g);
     }
