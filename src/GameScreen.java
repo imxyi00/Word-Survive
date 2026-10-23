@@ -24,6 +24,8 @@ final class GameScreen extends Screen {
     private final PixelButton shuffle = new PixelButton(Assets.get("shuffle_button.png"));
     private final HintButton hint = new HintButton();
     private final Overlay overlay = new Overlay();
+    private final BookOverlay bookOv = new BookOverlay();
+    private final BookButton book = new BookButton();
 
     GameScreen(Main app) {
         super(app);
@@ -40,7 +42,7 @@ final class GameScreen extends Screen {
         pause.setOpaque(false); pause.setContentAreaFilled(false); pause.setBorderPainted(false); pause.setFocusable(false);
         pause.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         pause.addActionListener(e -> { Sound.sfx("click"); pauseGame(); });
-        place(pause, 70, 25, 90, 90);
+        place(pause, 71, 26, 86, 86);
 
         place(sentence, 448, 198, 545, 172);
         place(meaning, 70, 524, 338, 165);
@@ -48,6 +50,8 @@ final class GameScreen extends Screen {
         place(pill, 965, 468, 430, 147);
         place(shuffle, 928, 665, 112, 113);
         place(hint, 1080, 672, 295, 98);
+        place(book, 1210, 225, 135, 155);
+        book.addActionListener(e -> { Sound.sfx("click"); openBook(); });
         shuffle.addActionListener(e -> doShuffle());
         hint.addActionListener(e -> useHint());
 
@@ -58,12 +62,16 @@ final class GameScreen extends Screen {
         overlay.setBounds(0, 0, UI.W, UI.H);
         add(overlay);
         setComponentZOrder(overlay, 0);
+        bookOv.setBounds(0, 0, UI.W, UI.H);
+        add(bookOv);
+        setComponentZOrder(bookOv, 0);
 
         setFocusable(true);
         addMouseListener(new MouseAdapter() { @Override public void mousePressed(MouseEvent e) { requestFocusInWindow(); } });
         addKeyListener(new KeyAdapter() {
             @Override public void keyPressed(KeyEvent e) {
                 int k = e.getKeyCode();
+                if (bookOv.isVisible()) { if (k == KeyEvent.VK_ESCAPE) closeBook(); return; }
                 if (k >= KeyEvent.VK_A && k <= KeyEvent.VK_Z) wheel.typeLetter((char) k);
                 else if (k == KeyEvent.VK_BACK_SPACE) wheel.backspace();
                 else if (k == KeyEvent.VK_ENTER) wheel.release();
@@ -80,6 +88,7 @@ final class GameScreen extends Screen {
     private void start() {
         stopTimers();
         overlay.setVisible(false);
+        bookOv.setVisible(false);
         feedback = 0; busy = false; running = true;
         refresh();
         clock.start();
@@ -129,6 +138,15 @@ final class GameScreen extends Screen {
 
     private void submit(String attempt) {
         if (!running || busy || s.current() == null) return;
+        int bonus = s.checkBonus(attempt);
+        if (bonus == 1) {
+            feedback = 1; flash = attempt; busy = true; Sound.sfx("correct");
+            app.user.coins += GameSession.BONUS_COINS; app.users.save();
+            book.repaint(); repaint();
+            later(600, this::resetFeedback);
+            return;
+        }
+        if (bonus == 2) { feedback = 2; flash = attempt; busy = true; Sound.sfx("wrong"); later(500, this::resetFeedback); repaint(); return; }
         GameSession.Result r = s.guess(attempt);
         switch (r) {
             case INCOMPLETE -> { }
@@ -210,6 +228,19 @@ final class GameScreen extends Screen {
                 () -> app.show(s.mode == GameSession.Mode.STAGE ? "levels" : "rush")});
     }
 
+    private void openBook() {
+        if (s == null || !running || busy || overlay.isVisible()) return;
+        running = false;
+        bookOv.open();
+    }
+
+    private void closeBook() {
+        bookOv.setVisible(false);
+        running = true;
+        repaint();
+        requestFocusInWindow();
+    }
+
     private void resume() { overlay.setVisible(false); running = true; refresh(); requestFocusInWindow(); }
 
     @Override protected void paintExtra(Graphics2D g) {
@@ -220,23 +251,23 @@ final class GameScreen extends Screen {
         g.setFont(UI.font(40)); g.setColor(Color.BLACK);
         boolean stage = s.mode == GameSession.Mode.STAGE;
         if (stage) {
-            UI.text(g, "LVL " + s.level, 330, 58, -1, 250);
-            for (int i = 0; i < GameSession.MAX_LIVES; i++) drawHeart(g, 612 + i * 85, 30, i < s.lives);
+            UI.text(g, "LVL  " + s.level, 350, 52, -1, 220);
+            for (int i = 0; i < GameSession.MAX_LIVES; i++) drawHeart(g, 605 + i * 84.5, 23, i < s.lives);
         } else {
             long sec = (s.timeLeftMs + 999) / 1000;
             String t = String.format("%d:%02d", sec / 60, sec % 60);
             g.setFont(UI.font(60)); g.setColor(sec <= 10 ? new Color(190, 20, 20) : Color.BLACK);
-            UI.text(g, t, 573, 57, 0, 260);
+            UI.text(g, t, 728, 52, 0, 260);
         }
-        g.drawImage(Assets.get("coin.png"), UI.s(881), UI.s(27), UI.s(52), UI.s(56), null);
+        UI.draw(g, Assets.get("coin.png"), 968, 23, 52, 56);
         g.setFont(UI.font(40)); g.setColor(Color.BLACK);
-        UI.text(g, String.valueOf(app.user.coins), 947, 56, -1, 175);
+        UI.text(g, String.valueOf(app.user.coins), 1038, 52, -1, 180);
         g.setFont(UI.font(22)); g.setColor(new Color(200, 235, 255));
         UI.text(g, "Points " + s.points, 30, 150, -1, 200);
     }
 
     private void drawHeart(Graphics2D g, double dx, double dy, boolean full) {
-        UI.draw(g, full ? Assets.get("heart.png") : Assets.gray("heart.png"), dx, dy, 68, 59);
+        UI.draw(g, full ? Assets.get("heart.png") : Assets.gray("heart.png"), dx, dy, 73, 62);
     }
 
     private static final class SentenceView extends JComponent {
@@ -394,19 +425,23 @@ final class GameScreen extends Screen {
         WheelView() {
             MouseAdapter m = new MouseAdapter() {
                 @Override public void mousePressed(MouseEvent e) {
-                    int i = letterAt(e.getPoint());
+                    int i = letterAt(e.getPoint(), false);
                     path.clear();
                     if (i >= 0) { path.push(i); Sound.sfx("select"); }
                     mouse = e.getPoint(); changed();
                 }
                 @Override public void mouseDragged(MouseEvent e) {
                     mouse = e.getPoint();
-                    int i = letterAt(e.getPoint());
-                    if (i >= 0 && !path.isEmpty() && i != path.peek()) {
-                        Integer top = path.pop();
-                        Integer below = path.peek();
-                        if (below != null && below == i) {  }
-                        else { path.push(top); if (!path.contains(i)) { path.push(i); Sound.sfx("select"); } }
+                    int i = letterAt(mouse, true);
+                    if (i >= 0) {
+                        if (path.isEmpty()) {
+                            path.push(i); Sound.sfx("select");
+                        } else if (i != path.peek()) {
+                            Integer top = path.pop();
+                            Integer below = path.peek();
+                            if (below != null && below == i) { Sound.sfx("select"); }
+                            else { path.push(top); if (!path.contains(i)) { path.push(i); Sound.sfx("select"); } }
+                        }
                     }
                     changed();
                 }
@@ -436,14 +471,32 @@ final class GameScreen extends Screen {
         }
         void backspace() { if (!path.isEmpty()) { path.pop(); changed(); } }
 
-        private Point center(int i) {
-            double r = Math.min(getWidth(), getHeight()) * 0.34, a = -Math.PI / 2 + 2 * Math.PI * i / Math.max(1, letters.length);
-            return new Point((int) (getWidth() / 2 + r * Math.cos(a)), (int) (getHeight() / 2 + r * Math.sin(a)));
+        private double wheelRadius() {
+            double scale = letters.length >= 10 ? 0.375 : letters.length >= 8 ? 0.36 : 0.34;
+            return Math.min(getWidth(), getHeight()) * scale;
         }
-        private int letterAt(Point p) {
-            int hit = Math.min(getWidth(), getHeight()) / 9;
-            for (int i = 0; i < letters.length; i++) if (center(i).distance(p) <= hit) return i;
-            return -1;
+        private int nodeRadius() {
+            int d = Math.min(getWidth(), getHeight());
+            return d / (letters.length >= 10 ? 13 : letters.length >= 8 ? 12 : 11);
+        }
+        private Point center(int i) {
+            double r = wheelRadius(), a = -Math.PI / 2 + 2 * Math.PI * i / Math.max(1, letters.length);
+            return new Point((int) Math.round(getWidth() / 2.0 + r * Math.cos(a)), (int) Math.round(getHeight() / 2.0 + r * Math.sin(a)));
+        }
+        private int letterAt(Point p, boolean dragging) {
+            if (letters.length == 0) return -1;
+            double minDim = Math.min(getWidth(), getHeight());
+            double chord = letters.length > 1 ? 2 * wheelRadius() * Math.sin(Math.PI / letters.length) : minDim;
+            double hit = dragging
+                    ? Math.min(nodeRadius() * 0.85, chord * 0.33)
+                    : Math.min(minDim / 9.0, chord * 0.45);
+            int best = -1;
+            double bestDist = hit;
+            for (int i = 0; i < letters.length; i++) {
+                double d = center(i).distance(p);
+                if (d <= bestDist) { bestDist = d; best = i; }
+            }
+            return best;
         }
 
         @Override protected void paintComponent(Graphics g0) {
@@ -451,18 +504,116 @@ final class GameScreen extends Screen {
             UI.nearest(g);
             g.drawImage(Assets.get("wordscape_circle.png"), 0, 0, getWidth(), getHeight(), null);
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            int rad = Math.min(getWidth(), getHeight()) / 11;
+            int rad = nodeRadius();
             Object[] idx = path.toArray();
             if (idx.length > 0) {
                 g.setColor(new Color(255, 255, 255, 200)); g.setStroke(new BasicStroke(UI.s(12), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
                 for (int k = idx.length - 1; k > 0; k--) { Point a = center((Integer) idx[k]), b = center((Integer) idx[k - 1]); g.drawLine(a.x, a.y, b.x, b.y); }
                 if (mouse != null) { Point a = center((Integer) idx[0]); g.drawLine(a.x, a.y, mouse.x, mouse.y); }
             }
-            g.setFont(UI.font(letters.length > 9 ? 46 : 60));
+            g.setFont(UI.font(letters.length > 9 ? 44 : letters.length >= 8 ? 52 : 60));
             for (int i = 0; i < letters.length; i++) {
                 Point c = center(i);
                 if (path.contains(i)) { g.setColor(new Color(10, 70, 150, 190)); g.fillOval(c.x - rad, c.y - rad, rad * 2, rad * 2); }
                 UI.centered(g, String.valueOf(letters[i]), new Rectangle(c.x - rad, c.y - rad, rad * 2, rad * 2), Color.WHITE);
+            }
+        }
+    }
+
+    private final class BookButton extends JButton {
+        BookButton() {
+            setOpaque(false); setContentAreaFilled(false); setBorderPainted(false); setFocusPainted(false); setFocusable(false);
+            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        }
+        private int x(double f) { return (int) Math.round(getWidth() * f); }
+        private int y(double f) { return (int) Math.round(getHeight() * f); }
+        @Override protected void paintComponent(Graphics g0) {
+            Graphics2D g = (Graphics2D) g0;
+            UI.nearest(g);
+            g.drawImage(Assets.trimmed("book_tile.png"), 0, 0, x(0.93), y(0.93), null);
+            g.drawImage(Assets.trimmed("book_icon.png"), x(0.12), y(0.1), x(0.7), y(0.7), null);
+            int d = y(0.34), cx = x(0.56), cy = y(0.58);
+            g.drawImage(Assets.trimmed("NumberIndicator.png"), cx, cy, d, d, null);
+            g.setFont(UI.font(32));
+            UI.centered(g, String.valueOf(s == null ? 0 : s.bonusFound.size()), new Rectangle(cx, cy, d, d), new Color(30, 30, 30));
+        }
+    }
+
+    private final class BookOverlay extends JPanel {
+        private static final int PER_SIDE = 8;
+        private int page;
+
+        BookOverlay() {
+            setLayout(null); setOpaque(false); setVisible(false);
+            MouseAdapter ma = new MouseAdapter() {
+                @Override public void mousePressed(MouseEvent e) {
+                    double x = e.getX() / UI.S, y = e.getY() / UI.S;
+                    if (Math.hypot(x - 1068, y - 168) <= 48) { Sound.sfx("click"); closeBook(); return; }
+                    if (pages() > 1 && y >= 330 && y <= 470) {
+                        if (x >= 250 && x <= 340) { page = Math.floorMod(page - 1, pages()); Sound.sfx("select"); repaint(); }
+                        else if (x >= 1090 && x <= 1200) { page = Math.floorMod(page + 1, pages()); Sound.sfx("select"); repaint(); }
+                    }
+                }
+                @Override public void mouseMoved(MouseEvent e) {
+                    double x = e.getX() / UI.S, y = e.getY() / UI.S;
+                    boolean hit = Math.hypot(x - 1068, y - 168) <= 48
+                            || (pages() > 1 && y >= 330 && y <= 470 && ((x >= 250 && x <= 340) || (x >= 1090 && x <= 1200)));
+                    setCursor(Cursor.getPredefinedCursor(hit ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
+                }
+            };
+            addMouseListener(ma);
+            addMouseMotionListener(ma);
+        }
+
+        void open() { page = 0; setVisible(true); repaint(); }
+
+        private List<String> words() { return s == null ? new ArrayList<>() : new ArrayList<>(s.bonusFound); }
+        private int pages() { return Math.max(1, (int) Math.ceil(words().size() / (2.0 * PER_SIDE))); }
+
+        @Override protected void paintComponent(Graphics g0) {
+            Graphics2D g = (Graphics2D) g0;
+            UI.nearest(g);
+            g.setColor(new Color(0, 0, 0, 215)); g.fillRect(0, 0, getWidth(), getHeight());
+
+            g.setFont(UI.font(66));
+            FontMetrics fm = g.getFontMetrics();
+            String a = "BONUS", b = "WORD";
+            int gap = UI.s(26), total = fm.stringWidth(a) + gap + fm.stringWidth(b);
+            int tx = (getWidth() - total) / 2, ty = UI.s(73) + fm.getAscent() / 2, sh = Math.max(2, UI.s(4));
+            g.setColor(Color.BLACK); g.drawString(a, tx + sh, ty + sh); g.drawString(b, tx + fm.stringWidth(a) + gap + sh, ty + sh);
+            g.setColor(new Color(80, 225, 70)); g.drawString(a, tx, ty);
+            g.setColor(new Color(40, 210, 245)); g.drawString(b, tx + fm.stringWidth(a) + gap, ty);
+
+            UI.draw(g, Assets.trimmed("book_open.png"), 340, 121, 780, 672);
+            UI.draw(g, Assets.trimmed("Level_Selection_Button.png"), 1020, 120, 96, 96);
+            g.setFont(UI.font(36));
+            UI.centered(g, "X", new Rectangle(UI.s(1020), UI.s(120), UI.s(96), UI.s(96)), Color.BLACK);
+
+            if (pages() > 1) {
+                BufferedImage arr = Assets.trimmed("arrow.png");
+                UI.draw(g, arr, 288, 365, 38, 70);
+                g.drawImage(arr, UI.s(1134), UI.s(365), UI.s(1134 + 38), UI.s(365 + 70), arr.getWidth(), 0, 0, arr.getHeight(), null);
+            }
+
+            List<String> words = words();
+            if (words.isEmpty()) {
+                g.setFont(UI.font(22));
+                UI.text(g, "No bonus words", 538, 340, 0, 200);
+                UI.text(g, "yet. Spell extra", 538, 380, 0, 200);
+                UI.text(g, "words to find them", 538, 420, 0, 200);
+                return;
+            }
+            int start = page * 2 * PER_SIDE;
+            for (int side = 0; side < 2; side++) {
+                double px = side == 0 ? 421 : 787;
+                for (int i = 0; i < PER_SIDE; i++) {
+                    int idx = start + side * PER_SIDE + i;
+                    if (idx >= words.size()) break;
+                    double cy = 190 + i * 62;
+                    UI.draw(g, Assets.get("coin.png"), px + 30, cy - 21, 42, 44);
+                    g.setFont(UI.font(34)); g.setColor(new Color(30, 30, 30));
+                    UI.text(g, words.get(idx), px + 90, cy, -1, 135);
+                }
             }
         }
     }

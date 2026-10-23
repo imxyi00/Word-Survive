@@ -22,13 +22,27 @@ final class Assets {
     }
 
     static InputStream open(String name) {
+        String alt = switch (name) {
+            case "book_tile.png" -> "ButtonForBook.png";
+            case "book_icon.png" -> "Book.png";
+            case "book_open.png" -> "OpenBook.png";
+            default -> null;
+        };
         for (File base : new File[]{new File("assets"), jarAssets()}) {
             File f = new File(base, name);
             if (f.isFile()) {
                 try { return new FileInputStream(f); } catch (IOException ignored) { }
             }
+            if (alt != null) {
+                File fa = new File(base, alt);
+                if (fa.isFile()) {
+                    try { return new FileInputStream(fa); } catch (IOException ignored) { }
+                }
+            }
         }
-        return Assets.class.getResourceAsStream("/assets/" + name);
+        InputStream res = Assets.class.getResourceAsStream("/assets/" + name);
+        if (res != null) return res;
+        return alt != null ? Assets.class.getResourceAsStream("/assets/" + alt) : null;
     }
 
     static BufferedImage get(String name) {

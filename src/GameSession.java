@@ -7,6 +7,8 @@ final class GameSession {
     enum Result { INCOMPLETE, CORRECT, WRONG, REPEATED }
 
     static final int MAX_LIVES = 3, HINT_COST = 50, RUSH_PENALTY_MS = 5000;
+    static final int BONUS_COINS = 5, MIN_BONUS_LEN = 3;
+    final LinkedHashSet<String> bonusFound = new LinkedHashSet<>();
 
     final Mode mode;
     final int level;
@@ -90,9 +92,29 @@ final class GameSession {
         return true;
     }
 
+    int checkBonus(String attempt) {
+        Puzzle.Blank b = current();
+        if (b == null || attempt.equalsIgnoreCase(b.word) || attempt.length() < MIN_BONUS_LEN
+                || !canSpell(attempt, b.word) || !BonusWords.valid(attempt)) return 0;
+        return bonusFound.add(attempt.toUpperCase()) ? 1 : 2;
+    }
+
+    static boolean canSpell(String attempt, String source) {
+        int[] counts = new int[26];
+        for (int i = 0; i < source.length(); i++) {
+            char c = Character.toLowerCase(source.charAt(i));
+            if (c >= 'a' && c <= 'z') counts[c - 'a']++;
+        }
+        for (int i = 0; i < attempt.length(); i++) {
+            char c = Character.toLowerCase(attempt.charAt(i));
+            if (c < 'a' || c > 'z' || --counts[c - 'a'] < 0) return false;
+        }
+        return true;
+    }
+
     Result guess(String attempt) {
         Puzzle.Blank b = current();
-        if (b == null || attempt.length() != b.word.length()) return Result.INCOMPLETE;
+        if (b == null || attempt.isEmpty()) return Result.INCOMPLETE;
         if (attempt.equalsIgnoreCase(b.word)) {
             b.solved = true;
             points += wordPoints(b);

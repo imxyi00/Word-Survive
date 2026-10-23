@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 
 final class SettingsOverlay extends JPanel {
     private static final double PX = 452, PY = 38, PW = 535, PH = 748;
-    /** Visible window of the scrollable body (between title banner and Save/Reset tabs) and how far it scrolls. */
     private static final double VIEW_TOP = 205, VIEW_BOTTOM = 677, MAX_SCROLL = 84, WHEEL_STEP = 30;
     private static final double MUSIC_Y = 395, RES_Y = 511, FIELD_H = 68;
 
@@ -163,7 +162,6 @@ final class SettingsOverlay extends JPanel {
         }
     }
 
-    /** Scrollable settings content, painted in screen design coordinates and clipped by {@link #view}. */
     private final class Body extends JPanel {
         Body() { super(null); }
         @Override protected void paintComponent(Graphics g0) {
@@ -178,7 +176,6 @@ final class SettingsOverlay extends JPanel {
         }
     }
 
-    /** "Log Out?" Yes/No layer drawn over the whole settings overlay. */
     private final class Confirm extends JPanel {
         Confirm() {
             super(null); setOpaque(false); setVisible(false);
@@ -203,7 +200,6 @@ final class SettingsOverlay extends JPanel {
         UI.text(g, s, PX + PW / 2, cy, 0, PW - 60);
     }
 
-    /** Text field with one or two centered lines and the left/right selector arrows. */
     private void field(Graphics2D g, double y, String... lines) {
         UI.draw(g, Assets.get("textfield.png"), 552, y, 330, FIELD_H);
         double cx = 552 + 330 / 2.0, cy = y + FIELD_H / 2, gap = 23;

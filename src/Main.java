@@ -94,7 +94,6 @@ public final class Main {
         } catch (java.io.IOException e) { System.err.println("Could not save settings: " + e.getMessage()); }
     }
 
-    /** Rebuilds every screen at the new scale (layout is computed in constructors) and keeps the session. */
     void changeResolution(int res) {
         saveResolution(res);
         Main m = start(res);
