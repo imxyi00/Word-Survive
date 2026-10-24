@@ -26,9 +26,6 @@ final class Puzzle {
 
     final List<List<Part>> chunks = new ArrayList<>();
     final List<Blank> blanks = new ArrayList<>();
-    final int tier;
-
-    Puzzle(int tier) { this.tier = tier; }
 
     int solvedCount() { int n = 0; for (Blank b : blanks) if (b.solved) n++; return n; }
     boolean done() { return solvedCount() == blanks.size(); }

@@ -29,7 +29,7 @@ final class Sound {
         int[] notes = SFX.get(name);
         if (notes == null || sfxVol == 0 || broken) return;
         double len = name.equals("click") || name.equals("select") ? 0.04 : name.equals("lose") || name.equals("wrong") ? 0.16 : 0.07;
-        play(synth(notes, len, 0.0), sfxVol, false, false);
+        play(synth(notes, len), sfxVol);
     }
 
     static void startMusic() {
@@ -70,16 +70,15 @@ final class Sound {
 
     static void setBg(int v) { bgVol = v; if (music != null) gain(music, v); }
 
-    private static Clip play(byte[] pcm, int vol, boolean loop, boolean keep) {
+    private static void play(byte[] pcm, int vol) {
         try {
             AudioFormat fmt = new AudioFormat(RATE, 16, 1, true, false);
             Clip clip = AudioSystem.getClip();
             clip.open(fmt, pcm, 0, pcm.length);
             gain(clip, vol);
-            if (loop) clip.loop(Clip.LOOP_CONTINUOUSLY); else clip.start();
-            if (!keep) clip.addLineListener(e -> { if (e.getType() == LineEvent.Type.STOP) clip.close(); });
-            return clip;
-        } catch (Throwable t) { broken = true; return null; }
+            clip.start();
+            clip.addLineListener(e -> { if (e.getType() == LineEvent.Type.STOP) clip.close(); });
+        } catch (Throwable t) { broken = true; }
     }
 
     private static void gain(Clip clip, int vol) {
@@ -89,17 +88,15 @@ final class Sound {
         } catch (Throwable ignored) { }
     }
 
-    private static byte[] synth(int[] notes, double noteSec, double bassMix) {
+    private static byte[] synth(int[] notes, double noteSec) {
         int per = (int) (RATE * noteSec);
         byte[] out = new byte[notes.length * per * 2];
         for (int n = 0; n < notes.length; n++) {
             if (notes[n] == 0) continue;
             double f = 440 * Math.pow(2, (notes[n] - 69) / 12.0);
-            double fb = 440 * Math.pow(2, (notes[n] - 81) / 12.0);
             for (int i = 0; i < per; i++) {
                 double t = i / RATE, env = Math.min(1, (per - i) / (per * 0.6)) * Math.min(1, i / 60.0);
                 double v = Math.signum(Math.sin(2 * Math.PI * f * t)) * 0.22;
-                if (bassMix > 0 && n % 4 == 0) v += Math.signum(Math.sin(2 * Math.PI * fb * t)) * 0.14 * bassMix;
                 short s = (short) (v * env * 32767);
                 out[(n * per + i) * 2] = (byte) (s & 0xFF);
                 out[(n * per + i) * 2 + 1] = (byte) (s >> 8);

@@ -9,7 +9,6 @@ import java.util.Map;
 
 final class Assets {
     private static final Map<String, BufferedImage> cache = new HashMap<>();
-    private static Map<String, BufferedImage> keys;
 
     private Assets() { }
 
@@ -132,21 +131,5 @@ final class Assets {
             }
         cache.put("tint:" + which, img);
         return img;
-    }
-
-    static BufferedImage key(String token) {
-        if (keys == null) {
-            keys = new HashMap<>();
-            BufferedImage kb = get("FullKeyBoard.png");
-            String[][] rows = {{"Q","W","E","R","T","Y","U","I","O","P"}, {"A","S","D","F","G","H","J","K","L"}, {"DEL","Z","X","C","V","B","N","M","GO"}};
-            int[] x0 = {19, 53, 54}, y0 = {6, 110, 216};
-            double[] pitch = {74.6, 74.9, 74.9};
-            for (int r = 0; r < rows.length; r++)
-                for (int i = 0; i < rows[r].length; i++) {
-                    int x = (int) Math.round(x0[r] + i * pitch[r]);
-                    if (x + 66 <= kb.getWidth() && y0[r] + 86 <= kb.getHeight()) keys.put(rows[r][i], kb.getSubimage(x, y0[r], 66, 86));
-                }
-        }
-        return keys.get(token);
     }
 }

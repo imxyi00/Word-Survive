@@ -389,11 +389,10 @@ final class GameScreen extends Screen {
             BufferedImage im = feedback == 1 ? Assets.tinted("green") : feedback == 2 ? Assets.tinted("red") : Assets.blankButton();
             g.drawImage(im, 0, 0, getWidth(), getHeight(), null);
             if (s == null || s.current() == null) return;
-            String t = feedback != 0 ? flash.toUpperCase() : wheel.word().isEmpty() ? s.pattern().replace(" ", "") .isEmpty() ? "" : spaced(s.pattern()) : wheel.word();
+            String t = feedback != 0 ? flash.toUpperCase() : wheel.word().isEmpty() ? s.pattern() : wheel.word();
             g.setFont(UI.fit(g, t, UI.font(62), (int) (getWidth() * 0.80)));
             UI.centered(g, t, new Rectangle(0, 0, getWidth(), getHeight()), Color.BLACK);
         }
-        private String spaced(String p) { return p; }
     }
 
     private final class HintButton extends JButton {

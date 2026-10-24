@@ -64,7 +64,6 @@ final class LevelScreen extends Screen {
     }
 
     @Override void onShow() {
-        header = false;
         int cur = Math.min(SentenceBank.LEVELS, app.user.cleared() + 1);
         scroll = target = clamp(X0 + (cur - 1) * STEP - 728);
         anim.start();

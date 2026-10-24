@@ -7,7 +7,6 @@ import java.awt.image.BufferedImage;
 abstract class Screen extends JPanel {
     protected final Main app;
     protected boolean clouds = true, dim = false, header = false;
-    protected Color nameColor = Color.BLACK;
     static int tick = 0;
     private BufferedImage bgCache;
     private String bgKey = "";
@@ -48,7 +47,7 @@ abstract class Screen extends JPanel {
         if (header && app.user != null) {
             Avatars.drawCircle(g, app.user.avatar, 20, 10, 175);
             g.setFont(UI.font(38));
-            g.setColor(nameColor);
+            g.setColor(Color.BLACK);
             UI.text(g, app.user.name, 220, 95, -1, 330);
         }
         paintExtra(g);

@@ -11,7 +11,7 @@ public final class Main {
 
     User user;
     int theme = 0;
-    String current, previous;
+    String current;
 
     private final java.awt.CardLayout cards = new java.awt.CardLayout();
     final JPanel root = new JPanel(cards);
@@ -48,7 +48,7 @@ public final class Main {
         boolean sameScreen = name.equals(current);
 
         if (old != null && !sameScreen) old.onHide();
-        if (!sameScreen) { previous = current; current = name; }
+        if (!sameScreen) current = name;
         cards.show(root, name);
         screens.get(name).onShow();
         root.repaint();

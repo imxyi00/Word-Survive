@@ -59,9 +59,6 @@ final class SentenceBank {
         } catch (IOException e) { System.err.println(file + ": " + e.getMessage()); }
     }
 
-    int sentenceCount() { int n = 0; for (ArrayList<String> l : sentences.values()) n += l.size(); return n; }
-    int wordCount() { return vocab.size(); }
-
     static int tierOf(int level) { return Math.min(MAX_TIER, 1 + (level - 1) / 5); }
 
     static int tierOfWord(String word) {
@@ -112,7 +109,7 @@ final class SentenceBank {
     }
 
     private Puzzle build(String sentence, int tier, int wantBlanks, int subLevel) {
-        Puzzle pz = new Puzzle(tier);
+        Puzzle pz = new Puzzle();
         List<List<String[]>> raw = new ArrayList<>();
         List<String> markerWords = new ArrayList<>();
         for (String token : sentence.split(" ")) {
