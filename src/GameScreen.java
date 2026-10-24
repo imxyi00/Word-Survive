@@ -608,10 +608,10 @@ final class GameScreen extends Screen {
                 for (int i = 0; i < PER_SIDE; i++) {
                     int idx = start + side * PER_SIDE + i;
                     if (idx >= words.size()) break;
-                    double cy = 190 + i * 62;
-                    UI.draw(g, Assets.get("coin.png"), px + 30, cy - 21, 42, 44);
-                    g.setFont(UI.font(34)); g.setColor(new Color(30, 30, 30));
-                    UI.text(g, words.get(idx), px + 90, cy, -1, 135);
+                    double cy = 172 + i * 57;
+                    UI.draw(g, Assets.get("coin.png"), px + 26, cy - 19, 38, 40);
+                    g.setFont(UI.font(32)); g.setColor(new Color(30, 30, 30));
+                    UI.text(g, words.get(idx), px + 80, cy, -1, 150);
                 }
             }
         }

@@ -45,10 +45,10 @@ abstract class Screen extends JPanel {
         if (clouds && app.theme == 0) UI.draw(g, Assets.get("cloud.png"), 200 + Math.sin(tick * 0.03) * 22, 64, 1105, 303);
         if (dim) { g.setColor(new Color(25, 25, 55, 150)); g.fillRect(0, 0, getWidth(), getHeight()); }
         if (header && app.user != null) {
-            Avatars.drawCircle(g, app.user.avatar, 20, 10, 175);
+            Avatars.drawCircle(g, app.user.avatar, 538, 15, 175);
             g.setFont(UI.font(38));
             g.setColor(Color.BLACK);
-            UI.text(g, app.user.name, 220, 95, -1, 330);
+            UI.text(g, app.user.name, 737, 100, -1, 310);
         }
         paintExtra(g);
     }

@@ -37,7 +37,7 @@ final class TitleScreen extends Screen {
         place(quit, 63, 51, 86, 94);
 
         PixelButton start = new PixelButton("Start");
-        start.addActionListener(e -> app.show("choice"));
+        start.addActionListener(e -> app.show(app.user != null ? "menu" : "choice"));
         place(start, 542, 547, 372, 128);
         setComponentZOrder(quitConfirm, 0);
     }
@@ -157,6 +157,7 @@ final class MenuScreen extends Screen {
             b.addActionListener(e -> a.run());
             place(b, 542, 287 + i * 157, 372, 128);
         }
+        addBack("title", 55, 56);
     }
     @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1236, 35, 0.349); }
 }
@@ -171,7 +172,7 @@ final class StackScreen extends Screen {
             b.addActionListener(e -> a.run());
             place(b, 542, 287 + i * 157, 372, 128);
         }
-        addBack(back, 45, 685);
+        addBack(back, 55, 56);
     }
     @Override protected void paintExtra(Graphics2D g) { UI.drawTrimmed(g, "LBL.png", 1236, 35, 0.349); }
 }
